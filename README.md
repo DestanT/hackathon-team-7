@@ -11,7 +11,11 @@ Many people will be working on this repo so following these steps will help ensu
 * As you develop the feature, think about dividing the work into manageable parts. For each part, use the following commands to commit your changes to your branch: 
 `
 git add .
+`
+`
 git commit -m "Brief description of changes"
+`
+`
 git push
 `
 This sequence stages your changes, commits them with a brief message, and pushes them to your branch on GitHub.
