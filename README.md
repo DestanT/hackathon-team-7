@@ -1,5 +1,11 @@
 # MindSister
 
+## Getting Started
+VSCode users:
+* You can clone this repo by going into your terminal and running the command "https://github.com/JackTubby/hackathon-team-7.git"
+
+## Working with the project
+
 ### Keep Your Code Updated
 Many people will be working on this repo so following these steps will help ensure that we keep our code in its own branches and we can merge it as we go.
 
