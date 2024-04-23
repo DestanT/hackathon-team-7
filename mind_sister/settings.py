@@ -43,7 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'django.contrib.sites',
+    # auth
+    'allauth',
+    'allauth.account',
+    # custom
     'forum',
     'profiles',
 ]
@@ -75,6 +79,32 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SITE_ID = 1
+
+# allauth settings
+ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Authenticate with email
+ACCOUNT_EMAIL_REQUIRED = True           # Email is required
+ACCOUNT_USERNAME_REQUIRED = False       # Username is not required
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # Email verification is mandatory
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'
+
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'test@example.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = 'testemail@example.com'
+    EMAIL_HOST_PASSWORD = 'testpassword'
+    EMAIL_USE_TLS = True
 
 WSGI_APPLICATION = 'mind_sister.wsgi.application'
 
@@ -122,7 +152,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
