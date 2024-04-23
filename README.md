@@ -2,7 +2,7 @@
 
 ## Getting Started
 VSCode users:
-* You can clone this repo by going into your terminal and running the command "https://github.com/JackTubby/hackathon-team-7.git"
+* You can clone this repo by going into your terminal and running the command `git clone "https://github.com/JackTubby/hackathon-team-7.git"`
 
 ## Working with the project
 
