@@ -49,9 +49,64 @@ Once you are ready to move on to the next feature run `git checkout main` to swi
 
 ### User Stories
 
-#### First Time Visitor Goals
 
-#### Returning/Frequent Visitor Goals
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Target User</th>
+<th>User Story</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VIEWING &amp; NAVIGATION</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Visitor</td>
+<td>I want to be able to navigate around the site and understand how it can benefit me.</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Visitor</td>
+<td>I want to be able to navigate around the site to learn more about the team behind the site and confirm that this site is valid and secure to use and how users' personal information is handled on the site.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Visitor</td>
+<td>I can click on Register button on Home Page so that I can navigate to Registration Page.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Visitor</td>
+<td>on the Registration Page I can fill a form with my name, e-mail address and phone number so that I can create an account as a user.</td>
+</tr>
+<td>REGISTRATION &amp; USER ACCOUNTS</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<td>5</td>
+<td>User</td>
+<td>I can easily register for an account, be able to view my profile and control what information about me other users can see.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>User</td>
+<td>after registration I will appear among the registered users and can start communicating with them.</td>
+</tr>
+ <tr>
+<td>7</td>
+<td>User</td>
+<td>after registration I will have options to start a thread on the Forum page and leave comments on the existing pages.</td>
+</tr>
+</tbody>
+</table>
 
 ## Design
 
