@@ -32,3 +32,5 @@ Once your feature is complete and ready for integration, initiate a pull request
 * Click 'New Pull Request'.
 * Select your feature branch and the main branch to merge into.
 * Click 'Create Pull Request'.
+
+Once you are ready to move on to the next feature run `git checkout main` to switch back to the main branch & then `git pull` to get the new changes and then follow the steps again.
