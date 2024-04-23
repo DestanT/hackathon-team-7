@@ -49,7 +49,6 @@ Once you are ready to move on to the next feature run `git checkout main` to swi
 
 ### User Stories
 
-
 <table>
 <thead>
 <tr>
@@ -63,13 +62,11 @@ Once you are ready to move on to the next feature run `git checkout main` to swi
 <td>VIEWING &amp; NAVIGATION</td>
 <td></td>
 <td></td>
-<td></td>
 </tr>
 <tr>
 <td>1</td>
 <td>Visitor</td>
 <td>I want to be able to navigate around the site and understand how it can benefit me.</td>
-<td></td>
 </tr>
 <tr>
 <td>2</td>
@@ -89,8 +86,8 @@ Once you are ready to move on to the next feature run `git checkout main` to swi
 <td>REGISTRATION &amp; USER ACCOUNTS</td>
 <td></td>
 <td></td>
-<td></td>
 </tr>
+<tr>
 <td>5</td>
 <td>User</td>
 <td>I can easily register for an account, be able to view my profile and control what information about me other users can see.</td>
@@ -100,7 +97,7 @@ Once you are ready to move on to the next feature run `git checkout main` to swi
 <td>User</td>
 <td>after registration I will appear among the registered users and can start communicating with them.</td>
 </tr>
- <tr>
+<tr>
 <td>7</td>
 <td>User</td>
 <td>after registration I will have options to start a thread on the Forum page and leave comments on the existing pages.</td>
