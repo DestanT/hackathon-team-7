@@ -34,3 +34,71 @@ Once your feature is complete and ready for integration, initiate a pull request
 * Click 'Create Pull Request'.
 
 Once you are ready to move on to the next feature run `git checkout main` to switch back to the main branch & then `git pull` to get the new changes and then follow the steps again.
+
+
+---
+---
+
+## About
+
+## Target Audience
+
+## Marketing
+
+## User Experience (UX)
+
+### User Stories
+
+#### First Time Visitor Goals
+
+#### Returning/Frequent Visitor Goals
+
+## Design
+
+### Colour Scheme
+
+### Typography
+
+### Imagery
+
+### Wireframes
+
+### Features
+
+### Accessibility
+
+
+## Technologies Used
+
+- ### Languages:
+
+
+- ### Frameworks and libraries:
+
+
+- ### Databases:
+
+- ### Other tools:
+
+
+## Flowcharts
+
+
+## Deployment and Local Deployment
+
+## Testing
+
+## Bugs
+
+### Known Bugs
+
+### Solved Bugs
+
+## Credits
+
+## Media
+
+## Acknowledgments
+
+
+##### Meet the Team
