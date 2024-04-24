@@ -24,6 +24,6 @@ urlpatterns = [
     path('about/', AboutView.as_view(), name='about'),
     path('contact/', ContactView.as_view(), name='contact'),
     path('threads/', include('forum.urls')),
+    path('accounts/', include('allauth.urls')),
     path('profiles/', include('profiles.urls')),
-    path('accounts/', include('allauth.urls'))
 ]
