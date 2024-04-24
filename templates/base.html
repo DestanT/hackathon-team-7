@@ -14,7 +14,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
         rel="stylesheet">
-
+    <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="static/assets/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="static/assets/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="static/assets/favicon/favicon-16x16.png">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
@@ -48,6 +51,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <span class="brand">Mind Sister</span>
+                <img src="static/assets/mind-sister-logo.png" alt="Mind Sister Logo" class="logo" width="50">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,11 +100,7 @@
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3">
-        <p class="m-0 text-center "></p>
-        <p class="m-0 text-center ">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i>
+        <p class="m-0 text-center ">&copy; 2024 Mindful Coders, Hybrid Hackathon April 24. All rights reserved.
         </p>
     </footer>
 
