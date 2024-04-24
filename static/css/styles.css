@@ -213,3 +213,17 @@ h1 {
   border-radius: 15px;
   font-size: 15px;
 }
+
+.contact-container {
+  background-color: lightblue;
+  border-radius: 15px;
+}
+
+.contact-button {
+  background-color: pink;
+  border-radius: 15px;
+  color:#333;
+  border: pink 1px solid;
+  padding: 5px;
+}
+
