@@ -171,3 +171,27 @@ h1 {
     font-size: 18px;
   }
 }
+
+/* Comment-section */
+.reply-container {
+  border: pink 1px solid;
+  border-radius: 15px;
+  background-color: #ffc8dd;
+  color: #333;
+}
+
+.comment-form {
+  background-color: rgb(238, 220, 223);
+}
+
+#reply-submit {
+  border-radius: 15px;
+  background-color:  rgb(238, 220, 223);
+  border-color: pink;
+  color: #333;
+  padding: 10px;
+
+}
+#reply-submit:hover {
+  background-color: pink;
+}
