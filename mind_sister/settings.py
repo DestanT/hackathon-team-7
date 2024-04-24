@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # auth
     'allauth',
     'allauth.account',
+    'crispy_forms',
     # custom
     'forum',
     'profiles',
@@ -57,8 +58,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -97,7 +98,7 @@ ACCOUNT_EMAIL_REQUIRED = True           # Email is required
 ACCOUNT_USERNAME_REQUIRED = False       # Username is not required
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # Email verification is mandatory
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/'
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -124,13 +125,11 @@ if 'DEVELOPMENT' in os.environ:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
     STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Password validation
