@@ -195,3 +195,21 @@ h1 {
 #reply-submit:hover {
   background-color: pink;
 }
+
+/* thread page */
+.information-hub {
+  background-color: pink;
+  color: #333;
+  border-radius: 15px;
+}
+.forum-post {
+  
+  background-color: lightblue;
+  border-radius: 15px;
+}
+
+.comment-reply {
+  background-color: plum;
+  border-radius: 15px;
+  font-size: 15px;
+}
