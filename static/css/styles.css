@@ -1,0 +1,197 @@
+/* Taher */
+:root {
+  --primary-color: #cdb4db;
+  --secondary-color: #ffc8dd;
+  --third-color: #ffafcc;
+  --fourth-color: #bde0fe;
+  --fifth-color: #a2d2ff;
+}
+
+body {
+  /* CHANGE NEEDED: Collab with Ren please */
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  color: var(--fourth-color);
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: var(--fourth-color);
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+body {
+  /* CHANGE NEEDED: This is currently overwriting your 'background-color' from the body above. If this is intended, please delete background-color above and add this in instead */
+  background-color: var(--fourth-color);
+}
+
+.hero-section {
+  background-color: var(--secondary-color); /* Light pink background */
+  padding: 100px 0;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+.feature-box {
+  background-color: var(--secondary-color);
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.feature-box h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.feature-box p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Ren */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* CHANGE NEEDED: Collab with Taher please */
+  font-size: 18px;
+  background-color: #f0ebe3;
+}
+
+a {
+  /* color: red; */
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+h1 {
+  /* CHANGE NEEDED: This h1 targets *all* h1's in the app, might not be a good idea - be more specific with this one */
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+/* forum section */
+.container {
+  margin: 0 40px;
+  padding: 0 40px;
+}
+
+.subforum {
+  margin-top: 10px;
+}
+
+.subforum-title {
+  background-color: #ffafcc;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 4px;
+}
+
+.subforum-row {
+  display: grid;
+  grid-template-columns: 7% 40% 23% 30%;
+}
+
+.subforum-column {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #bde0fe;
+}
+
+.subforum-icon i {
+  font-size: 30px;
+}
+
+/* utility */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* media query */
+/* for mobile viewpoint  */
+@media screen and (max-width: 460px) {
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .subforum-row {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 65% 35%;
+  }
+}
+
+/* for tablet viewpoint */
+@media screen and (min-width: 460px) and (max-width: 1024px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .subforum-row {
+    display: grid;
+    grid-template-columns: 10% 45% 20% 25%;
+  }
+
+  .subforum-icon i {
+    font-size: 35px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    /* CHANGE NEEDED: This h1 targets *all* h1's in the app, might not be a good idea - be more specific with this one */
+    font-size: 18px;
+  }
+}
+
+/* Comment-section */
+.reply-container {
+  border: pink 1px solid;
+  border-radius: 15px;
+  background-color: #ffc8dd;
+  color: #333;
+}
+
+.comment-form {
+  background-color: rgb(238, 220, 223);
+}
+
+#reply-submit {
+  border-radius: 15px;
+  background-color:  rgb(238, 220, 223);
+  border-color: pink;
+  color: #333;
+  padding: 10px;
+
+}
+#reply-submit:hover {
+  background-color: pink;
+}
