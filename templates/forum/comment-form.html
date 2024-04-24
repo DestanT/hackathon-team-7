@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container center-align mx-auto">
+
+
+    <div class="row reply-container p-5">
+        <div class="col">
+            <form>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col text-muted form-text">
+                            <p>
+                                Disclaimer: Our forum is not a substitute for professional help. Users are responsible
+                                for their posts, and we may remove content violating community guidelines. Engage
+                                respectfully and seek professional help if needed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col">
+                            <label class="text-muted" for="subject">Subject:</label>
+                            <input id="subject" class="comment-form form-control" type="text" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="text-muted" for="reply">Your reply:</label>
+                            <textarea id="reply" class="comment-form form-control" rows="4" cols="50" required>
+
+                            </textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button id="reply-submit">
+                                Submit Reply
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+
+{% endblock %}
