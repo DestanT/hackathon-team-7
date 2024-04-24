@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mx-auto">
+    <section id="contactus" class="contact-info container my-4 p-5">
+        <form id="contactForm" name="contactForm" onsubmit="return sendMail(this);">
+          <div class="mb-2 ">
+            <label for="name" class="contactlabel form-label">Your name</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+            <div id="nameHelp" class="form-text">Please provide your preferred name.</div><br>
+          </div>
+  
+          <div class="mb-2">
+            <label for="email" class="contactlabel form-label">Your email</label>
+            <input type="email" name="email" id="email" class="form-control" required>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div><br>
+          </div>
+  
+          <div class="mb-3">
+            <label for="enquiry" class="contactlabel form-label">Your query</label>
+            <textarea rows="10" name="enquiry" id="enquiry" class="form-control" required></textarea>
+          </div>
+  
+  
+          <div class="mb-2">
+            <input id="submit-button" class="btn btn-primary" type="submit" value="Submit Message"
+              aria-label="clicking submit will redirect to another page">
+          </div>
+        </form>
+      </section>
+</div>
+
+{% endblock %}
