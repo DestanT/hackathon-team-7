@@ -1,4 +1,3 @@
-
 {% url 'home' as home_url %}
 {% load static %}
 
@@ -49,7 +48,15 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == forum_url %}active{% endif %}" aria-label="page"
-                            href="#"><i class="fa-brands fa-forumbee p-2"></i></i>Forums</a>
+                            href="#"><i class="fa-brands fa-forumbee p-2"></i>Forums</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == about_url %}active{% endif %}" aria-label="page"
+                            href="#"><i class="fa-solid fa-users p-2"></i>About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == contact_url %}active{% endif %}" aria-label="page"
+                            href="#"><i class="fa-solid fa-address-book p-2"></i>Contact</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -58,6 +65,9 @@
                             href="#"><i class="fa-solid fa-user p-2"></i>Profile</a>
                     </li>
                 </ul>
+                <button type="button" class="btn btn-success ms-2">Login</button>
+                <button type="button" class="btn btn-primary ms-2">Sign Up</button>
+
             </div>
         </div>
     </nav>
