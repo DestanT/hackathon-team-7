@@ -8,5 +8,7 @@ class PostList(generic.ListView):
     template_name = 'forum/forum_page.html'
     paginate_by = 3
 
-# class PostDetailView(DetailView):
-#     model = Post 
+
+class PostDetail(DetailView):
+    model = Post
+    template_name = 'forum/thread.html'
