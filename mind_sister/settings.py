@@ -95,7 +95,7 @@ ACCOUNT_EMAIL_REQUIRED = True           # Email is required
 ACCOUNT_USERNAME_REQUIRED = False       # Username is not required
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory' # Email verification is mandatory
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/'
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
