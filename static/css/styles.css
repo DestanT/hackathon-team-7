@@ -198,20 +198,55 @@ h1 {
 
 /* thread page */
 .information-hub {
-  background-color: pink;
-  color: #333;
+  background-color: rgb(235, 170, 220);
+  color: #fefdfd;
+  border-radius: 10px 60px 30px;
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.forum-post {
+  background-color: rgb(170, 215, 228);
   border-radius: 15px;
 }
 .forum-post {
-  
-  background-color: lightblue;
+  background-color: rgb(170, 215, 228);
   border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.comment-reply {
-  background-color: plum;
+.contact-button {
+  background-color: pink;
   border-radius: 15px;
   font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.post-titles {
+  text-decoration: solid;
+}
+
+@media screen and (max-width: 480px) {
+  .information-hub {
+    margin: 0px;
+    padding: 15px;
+    font-size: small;
+
+  }
+
+  .forum-post {
+    font-size: small ;
+  }
+
+  .comment-reply {
+    font-size:x-small;
+    max-width: 200px;
+
+  }
 }
 
 .contact-container {
