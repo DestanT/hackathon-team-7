@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="container">
+    <div>
+      <h2>Post Thread</h2>
+      <form action="" method="POST">
+        <input
+          className="form-input" 
+          type="text"
+          id="threadtitle"
+          name="threadtitle"
+          placeholder="Thread title"
+          required
+          />
+    </div>
+    <div className="form-group">
+      <label className="form-label" for="message"></label> 
+      <textarea
+      className="form-input" 
+        id="message"
+        name="message"
+        required
+        placeholder="Type here..."
+      ></textarea>
+      <input type="hidden" name="redirect" />
+    </div>
+    
+    
+    <button className="form-button" class="form-button"           type="submit"><i class="fa-regular fa-pen-to-square"></i>Post Thread</button> 
+  </form>
+</div>
+
+{% endblock %}
