@@ -5,7 +5,7 @@ from .models import Post
 
 class PostList(generic.ListView):
     queryset = Post.objects.order_by('-created_on')
-    template_name = 'index.html'
+    template_name = 'forum/forum_page.html'
     paginate_by = 3
 
 # class PostDetailView(DetailView):
