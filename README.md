@@ -170,6 +170,8 @@ When planning the Mind Sister's features and scope, we drew up a Desirability, I
 
 #### Entity Relationship Diagram
 
+<img src="documentation/database-diagram.png" style="width: 798px; max-width: 70%;">
+
 ### User Stories
 
 <table>
@@ -236,11 +238,11 @@ When planning the Mind Sister's features and scope, we drew up a Desirability, I
 <details>
   <summary>Initial Wireframes</summary>
 
-<img src="documentation/initial-landing-page.png" style="width: 798px; max-width: 100%;">
+<img src="documentation/initial-landing-page.png" style="width: 798px; max-width: 70%;">
 
-<img src="documentation/initial-forum-page.png" style="width: 798px; max-width: 100%;">
+<img src="documentation/initial-forum-page.png" style="width: 798px; max-width: 70%;">
 
-<img src="documentation/initial-chatbox-page.png" style="width: 798px; max-width: 100%;">
+<img src="documentation/initial-chatbox-page.png" style="width: 798px; max-width: 70%;">
 
 </details>
 
@@ -248,22 +250,22 @@ When planning the Mind Sister's features and scope, we drew up a Desirability, I
 The initial wireframes in the above section were created based on the idea of building a Buddy System for women experiencing mental health problems. However, we identified that there are several issues with this idea that can potentially create more problems instead of solving them. The project's idea had to be changed, and so did the wireframes:
 
 #### Visitor
-<img src="documentation/thumbnail_new user landing page.png" style="width: 798px; max-width: 100%;">
+<img src="documentation/thumbnail_new user landing page.png" style="width: 798px; max-width: 70%;">
 
 <hr>
 
 #### Registered User
-<img src="documentation/thumbnail_returning user landing page.png" style="width: 798px; max-width: 100%;">
+<img src="documentation/thumbnail_returning user landing page.png" style="width: 798px; max-width: 70%;">
 
 
 ## Surface Plane
 
 ### Typography
-<img src="documentation/nunito-sans.png" style="width: 798px; max-width: 100%;">
+<img src="documentation/nunito-sans.png" style="width: 798px; max-width: 70%;">
 
 ### Colour Palette
 
-<img src="documentation/colour-palette.png" style="width: 798px; max-width: 100%;">
+<img src="documentation/colour-palette.png" style="width: 798px; max-width: 70%;">
 
 ### Imagery
 <strong>Mind Sister's Logo</strong>
@@ -273,13 +275,11 @@ The initial wireframes in the above section were created based on the idea of bu
 
 
 
----
----
 
-### Features
+
+<!-- ### Features
 
 ### Accessibility
-
 
 ## Technologies Used
 
@@ -294,7 +294,6 @@ The initial wireframes in the above section were created based on the idea of bu
 - ### Other tools:
 
 
-## Flowcharts
 
 
 ## Deployment and Local Deployment
@@ -305,9 +304,8 @@ The initial wireframes in the above section were created based on the idea of bu
 
 ### Known Bugs
 
-### Solved Bugs
+### Solved Bugs -->
 
-## Media
 
 ## Credits
 
@@ -315,7 +313,7 @@ The initial wireframes in the above section were created based on the idea of bu
 
 [Addressing unmet needs inwomen’s mental health](https://www.bma.org.uk/media/2115/bma-womens-mental-health-report-aug-2018.pdf)
 
-#### Well Structured Documentation Examples:
+#### Documentation Examples used as Reference:
 
 - https://github.com/rachel-o-donnell/rising-women
 - https://github.com/JoyZadan/shop-kbeauty
