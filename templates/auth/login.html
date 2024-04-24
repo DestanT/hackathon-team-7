@@ -1,6 +1,29 @@
-{% extends "base.html"}
-{% block content}
+{% extends "base.html" %}
+{% block content %}
+
+<section class="container my-4 ">
+    <form class="p-5">
+        <div class="mb-2">
+            <label for="username" class="contactlabel form-label">Your username</label>
+            <input type="username" name="username" id="username" class="form-control" required>
+        </div>
+        <div class="mb-2">
+            <label for="password" class="contactlabel form-label">Your Password</label>
+            <input type="password" name="password" id="password" class="form-control" required>
+        </div>
+
+        <div class="mb-2 text-center">
+            <input id="submit-button" class="btn btn-primary" type="submit" value="Log in"
+                aria-label="clicking submit will redirect to another page">
+        </div>
+        <div class="row">
+            <div class="form-text">New here?</div><br>
+            <div class="col">
+                <a href="#" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </form>
+</section>
 
 
-
-{% endblock%}
+{% endblock %}
