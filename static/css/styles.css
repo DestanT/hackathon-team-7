@@ -577,6 +577,7 @@ button {
   color: #6962d2;
   font-size: 20px;
 }
+}
 
 @media screen and (max-width: 460px) {
   #threadtitle {
