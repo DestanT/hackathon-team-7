@@ -5,7 +5,7 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.utils.text import slugify
 from .models import Post, Comment, Tag, Topic
-from .forms import PostForm, CommentForm
+from .forms import PostForm, CommentForm, TopicForm
 
 class PostList(generic.ListView):
     model = Post
@@ -97,3 +97,16 @@ class TopicDetailView(DetailView):
     model = Topic
     context_object_name = 'topic'
     template_name = 'forums/topic_detail.html'
+
+class TopicCreateView(CreateView):
+    model = Topic
+    form_class = TopicForm
+    template_name = 'forum/create_topic.html'
+
+    def form_valid(self, form):
+        topic = form.save(commit=False)
+        topic.save()
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse('forum:topic_detail', kwargs={'slug': self.object.slug})
