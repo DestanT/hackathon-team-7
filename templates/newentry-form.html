@@ -1,34 +1,41 @@
-{% extends "base.html" %}
-
-
-{% block content %}
-<div class="container">
-    <div>
-      <h2>Post Thread</h2>
-      <form action="" method="POST">
-        <input
-          className="form-input" 
-          type="text"
-          id="threadtitle"
-          name="threadtitle"
-          placeholder="Thread title"
-          required
-          />
+{% extends "base.html" %} {% block content %}
+<div class="thread-container">
+  <h2 class="thread-title">Post Thread</h2>
+  <form action="/submit-form" method="POST">
+    <div class="form-group">
+      <input
+        class="form-input"
+        type="text"
+        id="threadtitle"
+        name="threadtitle"
+        placeholder="Thread title"
+        required
+      />
     </div>
-    <div className="form-group">
-      <label className="form-label" for="message"></label> 
+    <div class="form-group">
+      <label class="form-label" for="message"></label>
       <textarea
-      className="form-input" 
+        class="form-input"
         id="message"
         name="message"
         required
         placeholder="Type here..."
       ></textarea>
-      <input type="hidden" name="redirect" />
     </div>
-    
-    
-    <button className="form-button" class="form-button"           type="submit"><i class="fa-regular fa-pen-to-square"></i>Post Thread</button> 
+    <div class="checkbox-container">
+      <label class="custom-checkbox">
+        <input
+          class="input-text"
+          type="checkbox"
+          name="checkbox"
+          id="checkboxId"
+        /><i class="fa-regular fa-eye-slash"></i>
+        Post Anonymously
+      </label>
+    </div>
+    <button class="thread-form-button" type="submit">
+      <i class="fa-regular fa-pen-to-square"></i> Post Thread
+    </button>
   </form>
 </div>
 
