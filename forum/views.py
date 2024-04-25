@@ -36,7 +36,7 @@ class PostCreate(CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.instance.slug = slugify(form.instance.title)
+        form.instance.slug = slugify(form.instance.title) 
         topic_slug = self.kwargs['topic_slug']
         topic = Topic.objects.get(slug=topic_slug)
         form.instance.topic = topic

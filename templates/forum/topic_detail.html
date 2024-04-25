@@ -11,7 +11,7 @@
       <div class="row forum-post p-3">
         <div class="row">
           <div class="col">
-            <a class="post-titles">{{post.title}}</a>
+            <a href="{% url 'forum:thread' slug=post.slug %}" class="post-titles">{{post.title}}</a>
           </div>
           <br />
         </div>

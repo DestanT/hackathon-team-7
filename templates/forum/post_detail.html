@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="post-detail">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+
+    <h3>Tags</h3>
+    <ul>
+        {% for tag in tags %}
+        <li>{{ tag.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Comments</h3>
+    <ul>
+        {% for comment in comments %}
+        <li>
+            <strong>{{ comment.user.username }}:</strong>
+            {{ comment.text }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
