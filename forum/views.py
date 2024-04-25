@@ -1,6 +1,10 @@
+from django.urls import reverse
 from django.views import generic
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.utils.text import slugify
 from .models import Post, Comment, Tag
+from .forms import PostForm, CommentForm
 
 class PostList(generic.ListView):
     model = Post
@@ -18,3 +22,65 @@ class PostDetail(DetailView):
         context['comments'] = Comment.objects.filter(post=self.get_object())
         context['tags'] = Tag.objects.filter(posts=self.get_object())
         return context
+    
+
+class PostCreate(CreateView):
+    model = Post
+    form_class = PostForm
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.slug = slugify(form.instance.title)
+        return super().form_valid(form)
+    
+    def get_success_url(self):
+        return reverse('forum:thread', kwargs={'slug': self.object.slug})
+
+
+class PostUpdate(UpdateView):
+    model = Post
+    fields = ['title', 'content', 'anonymous']
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.slug = slugify(self.object.title)
+        self.object.save()
+        return super().form_valid(form)
+    
+    def get_success_url(self):
+        return reverse('forum:thread', kwargs={'slug': self.object.slug})
+
+
+class PostDelete(DeleteView):
+    model = Post
+    
+    def get_success_url(self):
+        return reverse('forum:forum')
+    
+
+class CommentCreate(CreateView):
+    model = Comment
+    form_class = CommentForm
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.post = Post.objects.get(slug=self.kwargs['slug'])
+        return super().form_valid(form)
+    
+    def get_success_url(self):
+        return reverse('forum:thread', kwargs={'slug': self.kwargs['slug']})
+    
+
+class CommentUpdate(UpdateView):
+    model = Comment
+    fields = ['content']
+
+    def get_success_url(self):
+        return reverse('forum:thread', kwargs={'slug': self.object.post.slug})
+    
+
+class CommentDelete(DeleteView):
+    model = Comment
+
+    def get_success_url(self):
+        return reverse('forum:thread', kwargs={'slug': self.object.post.slug})
