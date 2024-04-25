@@ -1,10 +1,15 @@
 {% extends "base.html" %}
+
 {% block content %}
 <div class="container title-container d-flex mx-auto">
     <div class="row">
         <div class="col-lg-12 mx-auto py-5">
-            <h2 class="contact-title">Contact Us</h2>
-            <h3>We're always here to help!</h3>
+            <h2>Contact Us</h2>
+            <p>At Mind Sister, we understand the importance of providing a safe and supportive space for women to discuss mental health challenges, share experiences, and find solidarity. Our dedicated team is here to assist you in any way we can.
+
+                Whether you have questions about our forum, need support, or want to share feedback, we encourage you to reach out to us. Your well-being is our priority, and we are committed to providing you with the resources and assistance you need on your mental health journey.
+                
+                Feel free to use the contact form below to send us a message. </pp>
         </div>
     </div>
 </div>
@@ -17,7 +22,7 @@
             </div>
 
             <div class="mb-2">
-                <label for="email" class=" form-label">Your email</label>
+                <label for="email" class="form-label">Your email</label>
                 <input type="email" name="email" id="email" class="form-control" required>
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div><br>
             </div>
@@ -31,6 +36,27 @@
                 <input id="submit-button" class="contact-button" type="submit" value="Submit Message"
                     aria-label="clicking submit will redirect to another page">
             </div>
+        </form>
+        <div class="feedback-form mx-auto" id="thank-you-m">
+            <h3>Thank you for reaching out</h3>
+            <p>Thank you for reaching out to ou MindSister Forum for Women. We have received your message, and our
+                team is grateful for your trust in us.</p>
+            <p>Your well-being is our priority, and we are here to provide you with the support and resources you need.
+                Your feedback and questions help us improve our services and create a safe and supportive community for
+                all.</p>
+            <p>Please know that we are working diligently to respond to your message promptly. In the meantime, if you
+                have any urgent concerns or need immediate assistance, don't hesitate to reach out to our moderators or
+                fellow members.</p>
+            <p>Once again, thank you for reaching out to us. We value your participation in our community and look
+                forward to supporting you on your mental health journey.</p>
+            
+                <div class="row text-center">
+                    <div class="col">
+                        <a href="{% url 'home' %}" class="back-home-btn contact-button"> Home </a>
+                    </div>
+                </div>
+
+        </div>
         </form>
     </section>
 </div>
@@ -46,7 +72,10 @@
             }).then(
                 (response) => {
                     //https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
-                    console.log("success")
+                    const contactForm = document.getElementById('contactForm');
+                    const thankyouForm = document.getElementById('thank-you-m');
+                    contactForm.style.display = "none";
+                    thankyouForm.style.display ="block";
                 },
                 (error) => {
                     console.log("FAILED", error);
