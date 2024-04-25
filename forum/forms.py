@@ -11,18 +11,19 @@ class TopicForm(forms.ModelForm):
             'description': forms.Textarea(attrs={'cols': 80, 'rows': 3, 'placeholder': 'Add your topic description...'}),
         }
 
-class PostForm(ModelForm):
+class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content', 'anonymous']
-        labels = {
-            'title': 'Title',
-            'content': 'Content',
-            'anonymous': 'Post Anonymously'
-        }
+        fields = ['title', 'content']
         widgets = {
-            'content': Textarea(attrs={'cols': 80, 'rows': 20, 'placeholder': 'Write your post here...'}),
+            'content': forms.Textarea(attrs={'cols': 80, 'rows': 5, 'placeholder': 'Write your post...'}),
         }
+
+    def __init__(self, *args, **kwargs):
+        topic = kwargs.pop('topic', None)
+        super().__init__(*args, **kwargs)
+        if topic:
+            self.initial['topic'] = topic
 
 class CommentForm(ModelForm):
     class Meta:
