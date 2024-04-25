@@ -95,8 +95,13 @@ class TopicListView(ListView):
 
 class TopicDetailView(DetailView):
     model = Topic
-    context_object_name = 'topic'
-    template_name = 'forums/topic_detail.html'
+    slug_field = 'slug'
+    template_name = 'forum/topic_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['posts'] = self.object.posts.all()
+        return context
 
 class TopicCreateView(CreateView):
     model = Topic
