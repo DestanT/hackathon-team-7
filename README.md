@@ -4,7 +4,9 @@
 
 # Project Overview
 
-Mind Sister recognises women's specific needs when dealing with mental disorders and offers a platform where women can easily express themselves and reach out fo r help in a mental health forum.
+Mind Sister recognises women's specific needs when dealing with mental disorders and offers a platform where women can easily express themselves and reach out for help.
+
+<strong>Main Feature</strong>: Mental Health Forums
 
 This platform was built using Django, Python, HTML and CSS. The site was deployed on Heroku.
 
@@ -15,7 +17,7 @@ Mind Sister is Team 7 Mindful Coders' project submission for Code Institute's "W
 
 - [Jack](https://github.com/JackTubby) - Backend
 
-- [Mikaela](https://github.com/mikavir) - Backend | Frontend
+- [Mikaela](https://github.com/mikavir) - Frontend
 
 - [Istem](https://github.com/techistem) - Content
 
@@ -180,7 +182,27 @@ When planning the Mind Sister's features and scope, we drew up a Desirability, I
 
 #### Entity Relationship Diagram
 
-<img src="documentation/database-diagram.png" style="width: 398px;">
+An ER diagram visualises the relationships between entities like people, things, or concepts in a database. The relationships between these entities are then mapped and identified.
+
+The data model type used for this project is the Relational Model.
+
+- <strong>User Model</strong>
+  - The User model is a component of Django's Authentication system and contains information about the user.
+  - The User model contains the following fields: username.
+
+- <strong>Profile Model</strong>
+  - The Profile model contains the following fields: owner, create_on
+
+- <strong>Posts Model</strong>
+  - The Posts model contains the following fields: title, slug, content, author, create_on, updated_at, tags, likes.
+  - It uses author as a foreignkey.
+
+- <strong>Comments Model</strong>
+  - The Comments model contains the following fields: author_id, content, creation_date, last_modified_date, likes, dislikes, flagged, tags.
+  - It uses author_id as a foreignkey.
+
+
+<img src="documentation/database-diagram.png" style="width: 398px;" >
 
 ### User Stories
 
@@ -340,7 +362,7 @@ GitHub Projects was used to manage the development of the site:
 [Heroku](https://www.heroku.com/) was used for hosting and deployment of the live site.
 
 ## Cloud Storage Services Used
-[Cloudinary](https://cloudinary.com/)
+[Cloudinary](https://cloudinary.com/) was used to store user profile images
  <!-- was used to store the images. -->
 
 
