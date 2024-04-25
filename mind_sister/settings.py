@@ -107,8 +107,8 @@ else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
-    EMAIL_HOST_USER = 'testemail@example.com'
-    EMAIL_HOST_PASSWORD = 'testpassword'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
     EMAIL_USE_TLS = True
 
 WSGI_APPLICATION = 'mind_sister.wsgi.application'
@@ -175,3 +175,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Set CSRF_COOKIE_SECURE to True if using HTTPS
+CSRF_COOKIE_SECURE = True
+
+# SESSION_COOKIE_HTTPONLY already defaults to True, ensuring it is not accessed via JavaScript
+SESSION_COOKIE_HTTPONLY = True
+
+# Additionally, if your site is served over HTTPS, also set:
+SESSION_COOKIE_SECURE = True
