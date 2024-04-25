@@ -25,7 +25,7 @@ Mind Sister is Team 7 Mindful Coders' project submission for Code Institute's "W
 
 - [Ren](https://github.com/Discoveren) - Frontend | Wireframes 
 
-- [Karina](https://github.com/kkumyk) - README
+- [Karina](https://github.com/kkumyk) - Documentation
 
 
 ### TABLE OF CONTENTS
@@ -41,6 +41,16 @@ Mind Sister is Team 7 Mindful Coders' project submission for Code Institute's "W
         - [Typography](#typography)
         - [Colour Palette](#colour-palette)
         - [Imagery](#imagery)
+- [Agile Methodology](#agile-methodology)
+- [Technologies Used](#technologies-used)
+  - [Languages Used](#languages-used)
+  - [Frameworks Used](#frameworks-used)
+  - [Databases Used](#databases-used)
+  - [Libraries and Packages Used](#libraries-and-packages-used)
+  - [Programmes and Applications](#programmes-and-applications)
+  - [Cloud Application Platforms Used](#cloud-application-platforms-used)
+  - [Cloud Storage Services Used](#cloud-storage-services-used)
+<!-- - [Future Development](#future-development) -->
 - [Credits](#credits)
 - [Internal Docs](#internal-docs)
 
@@ -58,9 +68,9 @@ Mind Sister is Team 7 Mindful Coders' project submission for Code Institute's "W
 - 1:5 16-25yr women report recent self-harm.
 - Suicide rates in women are at their highest for a decade.
 
-### Project Goals
+<!-- ### Project Goals
 
-This section aims to answer the key question: What problems are we trying to solve with MindSister? 
+This section aims to answer the key question: What problems are we trying to solve with MindSister?  -->
 
 ## Scope Plane
 When planning the Mind Sister's features and scope, we drew up a Desirability, Importance and Viability analysis of all the features to be included in the project, and ranked each of these by order of importance from low (1) to high (5). The features that ranked the highest will be prioritised and delivered as part of the MVP.
@@ -170,7 +180,7 @@ When planning the Mind Sister's features and scope, we drew up a Desirability, I
 
 #### Entity Relationship Diagram
 
-<img src="documentation/database-diagram.png" style="width: 798px; max-width: 70%;">
+<img src="documentation/database-diagram.png" style="width: 398px;">
 
 ### User Stories
 
@@ -238,11 +248,11 @@ When planning the Mind Sister's features and scope, we drew up a Desirability, I
 <details>
   <summary>Initial Wireframes</summary>
 
-<img src="documentation/initial-landing-page.png" style="width: 798px; max-width: 70%;">
+<img src="documentation/initial-landing-page.png" style="width: 598px;">
 
-<img src="documentation/initial-forum-page.png" style="width: 798px; max-width: 70%;">
+<img src="documentation/initial-forum-page.png" style="width: 598px;">
 
-<img src="documentation/initial-chatbox-page.png" style="width: 798px; max-width: 70%;">
+<img src="documentation/initial-chatbox-page.png" style="width: 598px;">
 
 </details>
 
@@ -250,51 +260,97 @@ When planning the Mind Sister's features and scope, we drew up a Desirability, I
 The initial wireframes in the above section were created based on the idea of building a Buddy System for women experiencing mental health problems. However, we identified that there are several issues with this idea that can potentially create more problems instead of solving them. The project's idea had to be changed, and so did the wireframes:
 
 #### Visitor
-<img src="documentation/thumbnail_new user landing page.png" style="width: 798px; max-width: 70%;">
+<img src="documentation/thumbnail_new user landing page.png" style="width: 598px;">
 
 <hr>
 
 #### Registered User
-<img src="documentation/thumbnail_returning user landing page.png" style="width: 798px; max-width: 70%;">
+<img src="documentation/thumbnail_returning user landing page.png" style="width: 598px;">
 
 
 ## Surface Plane
 
 ### Typography
-<img src="documentation/nunito-sans.png" style="width: 798px; max-width: 70%;">
+Typography Nunito Sans will be used throughout the site.
+<img src="documentation/nunito-sans.png" style="width: 598px;">
 
 ### Colour Palette
 
-<img src="documentation/colour-palette.png" style="width: 798px; max-width: 70%;">
+<img src="documentation/colour-palette.png" style="width: 598px;">
 
 ### Imagery
 <strong>Mind Sister's Logo</strong>
 
 <img src="documentation/logo.png" style="width: 198px; max-width: 100%;">
 
+<hr>
+
+# Agile Methodology
+GitHub Projects was used to manage the development of the site:
+
+<img src="documentation/kanban.png" style="width: 998px;">
+
+<hr>
+
+# Technologies Used
+
+## Languages Used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) was used for the content and structure of the site.
+- [CSS3](https://en.wikipedia.org/wiki/CSS) was used for the styling of the site.
+- [Python](https://en.wikipedia.org/wiki/CSS) was used for the back end programming of the site.
+
+## Frameworks Used
+- [DJANGO](https://www.djangoproject.com/) v4.2.11 Django is a free and open-source, Python-based web framework that follows the model–template–views architectural pattern.
+
+## Databases Used
+
+- [ElephantSQL](https://www.elephantsql.com/)'s Postgres as a Service was used to host the database for the project.
+
+## Libraries and Packages Used
+- [asgiref](https://pypi.org/project/asgiref/) provides two wrappers that let you go between asynchronous and synchronous code.
+- [astroid](https://pylint.pycqa.org/projects/astroid/en/latest/) provides a common base representation of python source code.
+- [certifi](https://pypi.org/project/certifi/) validates the trustworthiness of SSL certificates while verifying the identity of TLS hosts.
+- [charset-normalizer](https://pypi.org/project/charset-normalizer/) helps you read text from an unknown charset encoding.
+- [django-allauth](https://docs.allauth.org/en/latest/) is an integrated set of Django applications dealing with account authentication, registration, management, and third-party (social) account authentication.
+- [django-cloudinary-storage](https://pypi.org/project/django-cloudinary-storage/) facilitates integration with Cloudinary by implementing Django Storage API. 
+- [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) defines the form rendering behavior.
+- [gunicorn] is a Python WSGI HTTP Server that allows us to run any Python application concurrently by running multiple processes within a single dyno.
+- [idna](https://pypi.org/project/idna/) a library to support the Internationalised Domain Names in Applications (IDNA) protocol.
+- [pillow](https://pypi.org/project/pillow/) is a required Python imaging library used to enable handling of images.
+- [pylint](https://pylint.readthedocs.io/en/stable/) used for errors checking and testing.
+- [pylint-plugin-utils](https://pypi.org/project/pylint-plugin-utils/) utilities and helpers for writing Pylint plugins.
+- [psycopg2](https://pypi.org/project/psycopg2/) is a postgresql database adapter for python and used to connect with our postgres database.
+- [requests](https://www.w3schools.com/python/module_requests.asp) allows you to send HTTP requests using Python.
+- [sqlparse](https://pypi.org/project/sqlparse/) provides support for parsing, splitting and formatting SQL statements.
+- [tomli](https://github.com/hukkin/tomli) is a Python library for parsing TOML.
+- [tomlkit](https://github.com/python-poetry/tomlkit) preserves all comments, indentations, whitespace and internal element ordering, and makes them accessible and editable via an intuitive API.
+- [typing_extensions](https://typing-extensions.readthedocs.io/en/latest/) enables use of new type system features on older Python versions.
+- [urllib3](https://github.com/urllib3/urllib3) is a HTTP client for Python.
+- [whitenoise](https://whitenoise.readthedocs.io/en/latest/) allows your web app to serve its own static files.
+
+## Programmes and Applications
+- [Balsamiq](https://balsamiq.com/) used to create wireframes.
+- [Git](https://git-scm.com/) used for version control and saving work in the repository to commit to GitHub.
+- [GitHub](https://github.com/) is the project's git repository.
+- [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects) used to track and integrate issues for Agile Development.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools) was used for debugging, validation (Lighthouse) and taking fullscreen screenshots of the site.
+
+## Cloud Application Platforms Used
+[Heroku](https://www.heroku.com/) was used for hosting and deployment of the live site.
+
+## Cloud Storage Services Used
+[Cloudinary](https://cloudinary.com/)
+ <!-- was used to store the images. -->
 
 
+<!-- # Future Development -->
 
 
 
 <!-- ### Features
 
 ### Accessibility
-
-## Technologies Used
-
-- ### Languages:
-
-
-- ### Frameworks and libraries:
-
-
-- ### Databases:
-
-- ### Other tools:
-
-
-
 
 ## Deployment and Local Deployment
 
@@ -311,17 +367,17 @@ The initial wireframes in the above section were created based on the idea of bu
 
 #### Mental Health Related Research Sources:
 
-[Addressing unmet needs inwomen’s mental health](https://www.bma.org.uk/media/2115/bma-womens-mental-health-report-aug-2018.pdf)
+[Addressing unmet needs in women’s mental health](https://www.bma.org.uk/media/2115/bma-womens-mental-health-report-aug-2018.pdf)
 
-#### Documentation Examples used as Reference:
-
+#### Documentation:
+The README files from the projects below were used to structure the documentation of this project: 
 - https://github.com/rachel-o-donnell/rising-women
 - https://github.com/JoyZadan/shop-kbeauty
 
     
 ## Internal Docs
 <details>
-  <summary>Getting Started (Internal Use)</summary>
+  <summary>Getting Started</summary>
 
 VSCode users:
 * You can clone this repo by going into your terminal and running the command `git clone "https://github.com/DestanT/hackathon-team-7"`
