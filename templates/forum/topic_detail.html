@@ -6,11 +6,28 @@
 <h2>Posts</h2>
 <ul>
     {% for post in topic.posts.all %}
-    <li>
-      <a href="{% url 'forum:thread' slug=post.slug %}">{{ post.title }}</a>
-      <br>
-      {{ post.content|safe }} 
-    </li>
+    <div class="row mb-2">
+      <div class="col">
+          <div class="row forum-post p-3">
+              <div class="row">
+                  <div class="col">
+                      <h2 class="post-titles">{{post.title}}</h2>
+                  </div>
+                  <br>
+              </div>
+              <div class="row">
+                  <div class="col">
+                      <p>{{post.content}}</p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                      <p>This post was written by {{post.author}} {{post.created_on}}.</p><br>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
     {% endfor %}
 </ul>
 
