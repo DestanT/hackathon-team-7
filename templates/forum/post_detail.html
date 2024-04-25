@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
 <section class="container-fluid information-hub mx-auto mb-2">
     <div class="row">
         <div class="col">
@@ -14,8 +15,7 @@
                 <div class="row">
                     <div class="col">
                         <h2 class="post-titles"> Title {{post.title}} </h2>
-                    </div>
-                    <br>
+                    </div><br>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -33,15 +33,15 @@
     <div class="row comment-reply p-2">
         <div class="col">
             <div class="row">
-                <div class="col">
-                    <p><i class="fa-solid fa-comment-dots"></i> comments will get posted here {{comments.content}}</p>
-                    <p>Comment from {{comments.author}} ...on {{comments.created_on}}</p>
+                <div id="comment-container">
+                    <div class="forum-post">
+                        <p><i class="fa-solid fa-comment-dots"><!-- exsisting comments will go here --></i>{{comments.content}}</p>
+                            <p>Comment from {{comments.author}} ...on {{comments.created_on}}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p></p>
-                </div>
+            <div><textarea name="" id="new-comment" cols="60" rows="5"></textarea></div>
+                <button id="btn-post"> Reply </button>
             </div>
         </div>
     </div>
