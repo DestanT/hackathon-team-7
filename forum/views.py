@@ -1,3 +1,4 @@
+from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views import generic
 from django.views.generic.detail import DetailView
@@ -34,6 +35,9 @@ class PostCreate(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         form.instance.slug = slugify(form.instance.title)
+        topic_slug = self.kwargs['topic_slug']
+        topic = Topic.objects.get(slug=topic_slug)
+        form.instance.topic = topic
         return super().form_valid(form)
     
     def get_success_url(self):
@@ -100,8 +104,19 @@ class TopicDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['posts'] = self.object.posts.all()
+        context['form'] = PostForm(topic=self.object)
         return context
+
+    def post(self, request, *args, **kwargs):
+        form = PostForm(request.POST, topic=self.object)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.topic = self.object 
+            post.save()
+            return redirect('forum:topic_detail', slug=self.object.slug)
+        context = self.get_context_data(**kwargs)
+        context['form'] = form
+        return render(request, self.template_name, context)
 
 class TopicCreateView(CreateView):
     model = Topic
