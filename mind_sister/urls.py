@@ -23,7 +23,7 @@ urlpatterns = [
     path('', HomepageView.as_view(), name='home'),
     path('about/', AboutView.as_view(), name='about'),
     path('contact/', ContactView.as_view(), name='contact'),
-    path('threads/', include('forum.urls')),
+    path('threads/', include(('forum.urls', 'forum'), namespace='forum')),
     path('accounts/', include('allauth.urls')),
     path('profiles/', include('profiles.urls')),
 ]
