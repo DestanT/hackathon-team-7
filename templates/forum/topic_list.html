@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Topics</h1>
+<ul>
+    {% for topic in topics %}
+    <li><a href="{{ topic.get_absolute_url }}">{{ topic.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

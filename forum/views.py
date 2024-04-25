@@ -1,15 +1,17 @@
 from django.urls import reverse
 from django.views import generic
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.utils.text import slugify
-from .models import Post, Comment, Tag
+from .models import Post, Comment, Tag, Topic
 from .forms import PostForm, CommentForm
 
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.order_by('-created_on')
     template_name = 'forum/forum_page.html'
+    context_object_name = 'posts'
     paginate_by = 3
 
 
@@ -85,3 +87,13 @@ class CommentDelete(DeleteView):
 
     def get_success_url(self):
         return reverse('forum:thread', kwargs={'slug': self.object.post.slug})
+
+class TopicListView(ListView):
+    model = Topic
+    context_object_name = 'topics'
+    template_name = 'forums/topic_list.html'
+
+class TopicDetailView(DetailView):
+    model = Topic
+    context_object_name = 'topic'
+    template_name = 'forums/topic_detail.html'
