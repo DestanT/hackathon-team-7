@@ -18,7 +18,7 @@ class PostList(generic.ListView):
 
 class PostDetail(DetailView):
     model = Post
-    template_name = 'forum/thread.html'
+    template_name = 'forum/post_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
