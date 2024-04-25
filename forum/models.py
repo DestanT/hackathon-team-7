@@ -4,9 +4,23 @@ from django.contrib.postgres.fields import ArrayField
 
 User = get_user_model()
 
-class Post(models.Model):
+class Topic(models.Model):
     title = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=255, unique=True, db_index=True)
+    description = models.TextField(blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        return reverse('forum:topic_detail', kwargs={'slug': self.slug})
+
+class Post(models.Model):
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name='posts')
+    title = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='forum_posts')
     created_on = models.DateTimeField(auto_now_add=True, db_index=True)
@@ -16,7 +30,6 @@ class Post(models.Model):
 
     def __str__(self):
         return str(self.title)
-    
 
 class Tag(models.Model):
     name = models.CharField(max_length=100, unique=True)

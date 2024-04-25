@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ topic.title }}</h1>
+<p>{{ topic.description }}</p>
+
+<h2>Posts</h2>
+<ul>
+    {% for post in topic.posts.all %}
+    <li>
+      <a href="{% url 'forum:thread' slug=post.slug %}">{{ post.title }}</a>
+      <br>
+      {{ post.content|safe }} 
+    </li>
+    {% endfor %}
+</ul>
+
+<h3>Add a Post</h3>
+<a href="{% url 'forum:create_post' topic.slug %}">Create a New Post</a>
+{% endblock %}
