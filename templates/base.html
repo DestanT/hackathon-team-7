@@ -65,7 +65,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == forum_url %}active{% endif %}" aria-label="page"
-                            href="#"><i class="fa-brands fa-forumbee p-2"></i>Forums</a>
+                            href="{% url 'forum:topic_list' %}"><i class="fa-brands fa-forumbee p-2"></i>Forums</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == about_url %}active{% endif %}" aria-label="page"
