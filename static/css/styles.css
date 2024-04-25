@@ -8,13 +8,7 @@
   --background-color: #f0ebe3;
   --text-color-dark: #333;
 }
-:root {
-  --purple: #CDB4DB;
-  --lightpink: #FFC8DD;
-  --pink: #FFAFCC;
-  --lightblue: #BDE0FE;
-  --blue: #A2D2FF;
-}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -101,7 +95,7 @@ footer {
 }
 .feature-box p {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--text-color-dark);
   padding: 15px;
 }
 
@@ -112,6 +106,7 @@ a {
   /* color: red; */
   font-weight: bolder;
   text-decoration: none;
+  color: var(--text-color-dark);
 }
 
 h1 {
@@ -131,7 +126,7 @@ h1 {
 }
 
 .subforum-title {
-  background-color: #ffafcc;
+  background-color:var(--secondary-color);
   padding: 10px;
   border-radius: 4px;
   margin: 4px;
@@ -146,7 +141,7 @@ h1 {
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
-  background-color: #bde0fe;
+  background-color: var(--fourth-color);
 }
 
 .subforum-icon i {
@@ -203,31 +198,31 @@ h1 {
 
 /* Comment-section */
 .reply-container {
-  border: pink 1px solid;
+  border: var(--third-color) 1px solid;
   border-radius: 15px;
-  background-color: #ffc8dd;
+  background-color: var(--secondary-color);
   color: #333;
 }
 
 .comment-form {
-  background-color: rgb(238, 220, 223);
+  background-color: var(--secondary-color);
 }
 
 #reply-submit {
   border-radius: 15px;
-  background-color:  rgb(238, 220, 223);
-  border-color: pink;
-  color: #333;
+  background-color:  var(--secondary-color);
+  border-color: var(--third-color);
+  color: var(--text-color-dark);
   padding: 10px;
 
 }
 #reply-submit:hover {
-  background-color: pink;
+  background-color: var(--secondary-color);
 }
 
 /* thread page */
 .information-hub {
-  background-color: rgb(235, 170, 220);
+  background-color: var(--secondary-color);
   color: #fefdfd;
   border-radius: 10px 60px 30px;
   margin: 10px;
@@ -236,31 +231,12 @@ h1 {
 }
 
 .forum-post {
-  background-color: rgb(170, 215, 228);
+  background-color: var(--fourth-color);
   border-radius: 15px;
   display: flex;
   flex-wrap: wrap;
 }
 
-/* .contact-button {
-  background-color: pink;
-  border-radius: 15px;
-  font-size: 15px;
-  display: flex;
-  flex-wrap: wrap;
-} */
-
-.contact-button {
-  background-color:var(--secondary-color);
-  border-radius: 15px;
-  color:var(--text-color-dark);
-  border: var(--secondary-color)1px solid;
-  padding: 5px;
-}
-
-.contact-button:hover {
-  background-color: var(--third-color);
-}
 
 .post-titles {
   text-decoration: solid;
@@ -285,10 +261,8 @@ h1 {
   }
 }
 
-.contact-container {
-  background-color: var(--fifth-color);
-  border-radius: 15px;
-}
+
+
 
 
 
@@ -312,7 +286,7 @@ h1 {
 .inner_content_wrapper form input {
   padding: 5px 8px;
   width: 100%;
-  border-bottom: 2px solid var(--purple);
+  border-bottom: 2px solid var(--primary-color);
   border-top: none;
   border-left: none;
   border-right: none;
@@ -327,14 +301,14 @@ h1 {
 }
 
 .inner_content_wrapper form a.btn {
-  background-color: var(--blue);
+  background-color: var(--fifth-color);
   font-weight: 600;
   border: none;
   border-radius: 10px !important;
 }
 
 button {
-  background-color: var(--pink);
+  background-color: var(--secondary-color);
   font-weight: 600;
   color: white;
   border: none;
@@ -343,7 +317,7 @@ button {
 }
 
 .password_reset input {
-  background-color: var(--pink);
+  background-color: var(--secondary-color);
   font-weight: 600;
   color: white;
   border: none !important;
@@ -373,10 +347,71 @@ button {
 
 .avatar:hover {
   border: var(--secondary-color) 10px solid;
-  box-shadow: #ffafcc 0px 0px 10px;
+  box-shadow: var(--third-color) 0px 0px 10px;
 }
 
 .about-card-text {
   font-size: 2rem;
   margin-bottom: 20px;
+}
+
+
+/* Contact Page */
+.contact-container {
+  background-color: var(--primary-color);
+  border-radius: 15px;
+}
+
+form {
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--text-color-dark);
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.contact-button {
+  background-color:var(--fourth-color);
+  border-radius: 10px;
+  color:var(--text-color-dark);
+  border: var(--fifth-color) 2px solid;
+  padding: 5px;
+}
+
+.contact-button:hover {
+  background-color: var(--fifth-color);
+}
+
+.form-text {
+  font-size: 14px;
+  color:var(--text-color-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+      padding: 10px;
+  }
+
+  .container-contact {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
 }
