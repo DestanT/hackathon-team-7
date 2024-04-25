@@ -12,6 +12,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, db_index=True)
     updated_at = models.DateTimeField(auto_now=True)
     likes = models.ManyToManyField(User, related_name='liked_posts', blank=True)
+    anonymous = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.title)
