@@ -20,7 +20,7 @@ class Topic(models.Model):
 class Post(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name='posts')
     title = models.CharField(max_length=255, unique=True)
-    slug = models.SlugField(max_length=255, unique=True, db_index=True)
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
     content = models.TextField()
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='forum_posts')
     created_on = models.DateTimeField(auto_now_add=True, db_index=True)
