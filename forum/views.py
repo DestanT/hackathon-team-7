@@ -27,6 +27,7 @@ class PostDetail(DetailView):
 class PostCreate(CreateView):
     model = Post
     form_class = PostForm
+    template_name = 'forum/create_post.html'
 
     def form_valid(self, form):
         form.instance.author = self.request.user

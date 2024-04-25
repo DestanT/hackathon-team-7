@@ -2,6 +2,8 @@ from django.urls import path
 from django.contrib.auth.decorators import login_required
 from . import views
 
+app_name = 'forum'
+
 urlpatterns = [
     path('', views.PostList.as_view(), name='forum'),
     path('new/', login_required(views.PostCreate.as_view()), name='new_thread'),
