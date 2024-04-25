@@ -100,14 +100,14 @@ footer {
 
 /* Ren */
 
-a {
+.subforum-topic {
   /* color: red; */
   font-weight: bolder;
   text-decoration: none;
   color: var(--text-color-dark);
 }
 
-h1 {
+.subforum-heading {
   /* CHANGE NEEDED: This h1 targets *all* h1's in the app, might not be a good idea - be more specific with this one */
   font-size: 25px;
   font-weight: bolder;
@@ -116,7 +116,7 @@ h1 {
 /* forum section */
 .container {
   margin: 0 40px;
-  padding: 0 40px;
+  padding: 0 40px 100px;
 }
 
 .subforum {
@@ -188,8 +188,7 @@ h1 {
     font-size: 16px;
   }
 
-  h1 {
-    /* CHANGE NEEDED: This h1 targets *all* h1's in the app, might not be a good idea - be more specific with this one */
+  .subforum-heading {
     font-size: 18px;
   }
 }
@@ -491,92 +490,90 @@ button {
     font-size: 20px;
   }
 
+  /* Thread forum post  */
+  .thread-title {
+    text-align: left;
+    padding: 50px;
+    text-align: center;
+    color: #6962d2;
+    font-size: 50px;
+  }
 
+  .thread-container {
+    text-align: center;
+    border: 1px solid #6962d2;
+    width: 80%;
+    margin: 0 auto;
+    background-color: #e8d8f2;
+    margin-top: 20px;
+    border-radius: 8px;
+  }
 
-/* Thread forum post  */
-.thread-title {
-  text-align: left;
-  padding: 50px;
-  text-align: center;
-  color: #6962d2;
-  font-size: 50px;
-}
+  #threadtitle,
+  textarea {
+    font-size: 50px;
+    width: 80%;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 3px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 80%;
+    margin-top: 20px;
+    resize: none;
+  }
 
-.thread-container {
-  text-align: center;
-  border: 1px solid #6962d2;
-  width: 80%;
-  margin: 0 auto;
-  background-color: #e8d8f2;
-  margin-top: 20px;
-  border-radius: 8px;
-}
+  #threadtitle:focus {
+    outline: none;
+    border-color: #a2d2ff;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+  }
 
-#threadtitle,
-textarea {
-  font-size: 50px;
-  width: 80%;
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  color: #333;
-  background-color: #f9f9f9;
-  border: 3px solid #ccc;
-  border-radius: 8px;
-  padding: 10px;
-  width: 80%;
-  margin-top: 20px;
-  resize: none;
-}
+  textarea {
+    font-size: 18px;
+    height: 400px;
+  }
 
-#threadtitle:focus {
-  outline: none;
-  border-color: #a2d2ff;
-  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
-}
+  textarea:focus {
+    outline: none;
+    border-color: #ffafcc;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+  }
 
-textarea {
-  font-size: 18px;
-  height: 400px;
-}
+  button {
+    border: none;
+    background-color: none;
+    cursor: pointer;
+  }
 
-textarea:focus {
-  outline: none;
-  border-color: #ffafcc;
-  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
-}
+  .thread-form-button {
+    border: none;
+    border-radius: 8px;
+    padding: 20px 40px;
+    background-color: #ffafcc;
+    color: #ff084a;
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 50px auto;
+  }
 
-button {
-  border: none;
-  background-color: none;
-  cursor: pointer;
-}
+  .thread-form-button:hover {
+    background-color: #bde0fe;
+    color: #6962d2;
+  }
 
-.thread-form-button {
-  border: none;
-  border-radius: 8px;
-  padding: 20px 40px;
-  background-color: #ffafcc;
-  color: #ff084a;
-  font-family: Arial, sans-serif;
-  font-size: 22px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin: 50px auto;
-}
+  .checkbox-container {
+    margin-top: 20px;
+  }
 
-.thread-form-button:hover {
-  background-color: #bde0fe;
-  color: #6962d2;
-}
-
-.checkbox-container {
-  margin-top: 20px;
-}
-
-.checkbox-container label {
-  color: #6962d2;
-  font-size: 20px;
-}
+  .checkbox-container label {
+    color: #6962d2;
+    font-size: 20px;
+  }
 }
 
 @media screen and (max-width: 460px) {
@@ -587,7 +584,6 @@ button {
     width: 95%;
   }
 }
-
 
 .feedback-form {
   display: none;
