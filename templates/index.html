@@ -4,20 +4,20 @@
 {% block content %}
 
 <!-- Hero Section -->
-<div class="hero-section mb-5 d-flex justify-content-center align-items-center">
-    <div class="container text-center">
+<div class="container d-flex justify-content-center align-items-center mx-auto">
+    <div class="hero-section mb-5 py-5 text-center">
         <h1>Welcome to MindSister</h1>
         <p>Empowering women to take charge of their health and wellness journey.</p>
         {% if user.is_authenticated %}
-        <a href="{% url 'about' %}" class="btn btn-primary">Get Involved</a>
+        <a href="{% url 'about' %}" class="btn btn-landing">Get Involved</a>
         {% else %}
-        <a href="{% url 'account_signup' %}" class="btn btn-primary">Join Now</a>
+        <a href="{% url 'account_signup' %}" class="btn btn-landing">Join Now</a>
         {% endif %}
     </div>
 </div>
 
 <!-- Features Section -->
-<div class="container">
+<div class="container feature-container d-flex justify-content-center align-items-center mx-auto">
     <div class="row">
         <div class="col-lg-6 mb-5">
             <div class="feature-box">
