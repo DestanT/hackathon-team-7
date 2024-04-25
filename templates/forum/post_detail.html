@@ -1,49 +1,25 @@
 {% extends "base.html" %}
+
 {% block content %}
-<section class="container-fluid information-hub mx-auto mb-2">
-    <div class="row">
-        <div class="col">
-            <p><i class="fa-solid fa-hashtag"></i>{{post.tags}} hashtag will go here</p>
-        </div>
-    </div>
-</section>
-<section class="container mb-5 mx-auto">
-    <div class="rowmb-2">
-        <div class="col">
-            <div class="row forum-post p-3">
-                <div class="row">
-                    <div class="col">
-                        <h2 class="post-titles"> Title {{post.title}} </h2>
-                    </div>
-                    <br>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p> content will go here {{post.content}}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>This post was written by {{post.author}} {{post.created_on}}.</p><br>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row comment-reply p-2">
-        <div class="col">
-            <div class="row">
-                <div class="col">
-                    <p><i class="fa-solid fa-comment-dots"></i> comments will get posted here {{comments.content}}</p>
-                    <p>Comment from {{comments.author}} ...on {{comments.created_on}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="post-detail">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+
+    <h3>Tags</h3>
+    <ul>
+        {% for tag in tags %}
+        <li>{{ tag.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Comments</h3>
+    <ul>
+        {% for comment in comments %}
+        <li>
+            <strong>{{ comment.user.username }}:</strong>
+            {{ comment.text }}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}

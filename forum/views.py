@@ -1,4 +1,6 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, render
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.urls import reverse
 from django.views import generic
 from django.views.generic.detail import DetailView
@@ -34,7 +36,7 @@ class PostCreate(CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
-        form.instance.slug = slugify(form.instance.title)
+        form.instance.slug = slugify(form.instance.title) 
         topic_slug = self.kwargs['topic_slug']
         topic = Topic.objects.get(slug=topic_slug)
         form.instance.topic = topic
@@ -44,39 +46,38 @@ class PostCreate(CreateView):
         return reverse('forum:thread', kwargs={'slug': self.object.slug})
 
 
-class PostUpdate(UpdateView):
+class PostUpdate(UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['title', 'content', 'anonymous']
+    template_name = 'forum/edit_post.html'
 
-    def form_valid(self, form):
-        self.object = form.save(commit=False)
-        self.object.slug = slugify(self.object.title)
-        self.object.save()
-        return super().form_valid(form)
-    
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
+
+    def handle_no_permission(self):
+        return HttpResponseRedirect(reverse('forum:post_list'))
+
     def get_success_url(self):
-        return reverse('forum:thread', kwargs={'slug': self.object.slug})
+        topic_slug = self.object.topic.slug
+        return reverse('forum:topic_detail', kwargs={'slug': topic_slug})
+    
 
-
-class PostDelete(DeleteView):
+class PostDelete(UserPassesTestMixin, DeleteView):
     model = Post
-    
-    def get_success_url(self):
-        return reverse('forum:forum')
-    
+    template_name = 'forum/confirm_delete.html'
 
-class CommentCreate(CreateView):
-    model = Comment
-    form_class = CommentForm
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author
 
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        form.instance.post = Post.objects.get(slug=self.kwargs['slug'])
-        return super().form_valid(form)
-    
+    def handle_no_permission(self):
+        return HttpResponseRedirect(reverse('forum:post_list'))
+
     def get_success_url(self):
-        return reverse('forum:thread', kwargs={'slug': self.kwargs['slug']})
-    
+        topic_slug = self.object.topic.slug
+        return reverse('forum:topic_detail', kwargs={'slug': topic_slug})
+
 
 class CommentUpdate(UpdateView):
     model = Comment
