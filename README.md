@@ -337,7 +337,7 @@ GitHub Projects was used to manage the development of the site:
 - [django-allauth](https://docs.allauth.org/en/latest/) is an integrated set of Django applications dealing with account authentication, registration, management, and third-party (social) account authentication.
 - [django-cloudinary-storage](https://pypi.org/project/django-cloudinary-storage/) facilitates integration with Cloudinary by implementing Django Storage API. 
 - [django-crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) defines the form rendering behavior.
-- [gunicorn] is a Python WSGI HTTP Server that allows us to run any Python application concurrently by running multiple processes within a single dyno.
+- [gunicorn](https://gunicorn.org/) is a Python WSGI HTTP Server that allows us to run any Python application concurrently by running multiple processes within a single dyno.
 - [idna](https://pypi.org/project/idna/) a library to support the Internationalised Domain Names in Applications (IDNA) protocol.
 - [pillow](https://pypi.org/project/pillow/) is a required Python imaging library used to enable handling of images.
 - [pylint](https://pylint.readthedocs.io/en/stable/) used for errors checking and testing.
@@ -362,13 +362,42 @@ GitHub Projects was used to manage the development of the site:
 [Heroku](https://www.heroku.com/) was used for hosting and deployment of the live site.
 
 ## Cloud Storage Services Used
-[Cloudinary](https://cloudinary.com/) was used to store user profile images
- <!-- was used to store the images. -->
+[Cloudinary](https://cloudinary.com/) was used to store user profile images.
 
+# Deployment and Local Deployment
+
+## Local Deployment
+
+### Obtaining EmailJS API
+
+1. Sign up for a [EmailJS](https://www.emailjs.com/docs/) account in the EmailJS website.
+2. Create an email service in your EmailJS dashboard.
+3. Install EmailJS Library. You can do this by including the EmailJS script in your HTML file or by installing it via npm if you're using a package manager like npm or yarn.
+
+```
+npm install --save @emailjs/browser
+```
+or
+```
+$ yarn add @emailjs/browser
+```
+1. In your EmailJS dashboard, navigate to the "API Keys" section and copy your API key.
+2. Add this code snippet before your closing tags. Making sure you have added your public key.
+
+```
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+      emailjs.init({
+        publicKey: "YOUR_PUBLIC_KEY",
+      });
+  })();
+</script>
+```
 
 <!-- # Future Development -->
-
-
 
 <!-- ### Features
 
@@ -387,9 +416,15 @@ GitHub Projects was used to manage the development of the site:
 
 ## Credits
 
-#### Mental Health Related Research Sources:
+#### Online sources used for research:
 
-[Addressing unmet needs in women’s mental health](https://www.bma.org.uk/media/2115/bma-womens-mental-health-report-aug-2018.pdf)
+- [Addressing unmet needs in women’s mental health](https://www.bma.org.uk/media/2115/bma-womens-mental-health-report-aug-2018.pdf)
+
+- [talkwomenshealth](https://www.talkhealthpartnership.com/talkwomenshealth/forums) forum
+
+- [Mental Health Forum](https://www.mentalhealthforum.net/forum/)
+
+- [Premenstrual dysphoric disorder (PMDD)](https://www.mind.org.uk/information-support/types-of-mental-health-problems/premenstrual-dysphoric-disorder-pmdd/about-pmdd/)
 
 #### Documentation:
 The README files from the projects below were used to structure the documentation of this project: 
