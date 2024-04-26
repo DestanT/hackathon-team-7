@@ -1,53 +1,39 @@
 {% extends "base.html" %}
+
 {% block content %}
-<section class="tag-container-fluid information-hub mx-auto mb-2">
+{% comment %} Post {% endcomment %}
+<section class="information-hub mx-auto mb-2">
     <div class="row">
         <div class="col">
-            <i class="fa-solid fa-hashtag"></i>
-            <h1>Find Out More Information</h1>
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.content }}</p>
         </div>
     </div>
-</section>
-<section class="tag-container mb-5 mx-auto">
-    <div class="row mb-2">
-        <div class="col">
-            <div class="forum-post p-3">
-                <div class="row">
-                    <div class="col">
-                        <h2 class="post-titles">{{ post.title }}</h2>
-                    </div>               
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <p>{{ post.content }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> 
 
-    <div class="tags">
-        <h3>Tags</h3>
-        <ul>
-            {% for tag in tags %}
-                <li>{{ tag.name }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div class="row comment-reply p-2">
-        <div class="col">
-            <div id="comment-container">
-                <div class="forum-post">
-                    {% for comment in comments %}
-                        <p><i class="fa-solid fa-comment-dots"></i> <strong>{{ comment.user.username }}:</strong> {{ comment.text }}</p>
+
+{% comment %} comments {% endcomment %}
+<div class="row comment-reply p-2">
+    <div class="col">
+        <div id="comment-container">
+            <div class="forum-post">
+                {% if comments %}
+                {% for comment in comments %}
+                        <p><i class="fa-solid fa-comment-dots"></i> <strong>{{ comment.user.username }}:</strong> {{ comment.content }}</p>
                     {% endfor %}
-                </div>
-                <div>
-                    <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
-                </div>
-                <button id="btn-post">Reply</button>
+                    {% else %}
+                <p>No comments to show</p>
+                {% endif %}
             </div>
         </div>
+    </div>
+</div>
+    <div>
+        <h3>Add a Comment</h3>
+        <form method="post" action="{% url 'forum:add_comment_to_post' post.id %}">
+            {% csrf_token %}
+            <textarea name="content" id="new-comment" cols="60" rows="5" placeholder="Write your comment here..."></textarea>
+            <button type="submit" id="btn-post">Post Comment</button>
+        </form>        
     </div>
 </section>
 {% endblock %}
