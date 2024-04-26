@@ -1,6 +1,6 @@
 # MIND SISTER
 
-[Link to the deployed site]()
+[Link to the deployed site](https://april-2024-hackathon-a4e92040a028.herokuapp.com/)
 
 # Project Overview
 
@@ -44,6 +44,7 @@ Mind Sister is Team 7 Mindful Coders' project submission for Code Institute's "W
         - [Colour Palette](#colour-palette)
         - [Imagery](#imagery)
 - [Agile Methodology](#agile-methodology)
+- [Features](#features)
 - [Technologies Used](#technologies-used)
   - [Languages Used](#languages-used)
   - [Frameworks Used](#frameworks-used)
@@ -336,6 +337,20 @@ Typography Nunito Sans will be used throughout the site.
 GitHub Projects was used to manage the development of the site:
 
 <img src="documentation/kanban.png" style="width: 998px;">
+
+# Features
+
+## Log In Page
+<img src="documentation/login.png" style="width: 598px;">
+
+## Sign In Page
+<img src="documentation/signin.png" style="width: 598px;">
+
+## Contact Page
+<img src="documentation/contact.png" style="width: 598px;">
+
+## Auto Reply
+<img src="documentation/auto-reply.png" style="width: 598px;">
 
 <hr>
 
