@@ -6,15 +6,21 @@
     </div>
     <div class = "col-12">
         <ul class="topic-ul" >
+        {% if topics %}
         {% for topic in topics %}
             <li><a href="{{ topic.get_absolute_url }}">{{ topic.title }}</a>
                 <div class="topic-description">
                 <p>{{ topic.description }}</p>
             </div>
             </li>
-                  
-
         {% endfor %}
+        {% else %}
+          {% if user.is_staff %}
+            <a href="{% url 'forum:create_topic' %}">No topics please add one</a>
+          {% else %}
+            <a href="{% url 'account_login' %}">Please login</a>
+          {% endif %}
+        {% endif %}
         </ul>
     </div>
 {% endblock %}

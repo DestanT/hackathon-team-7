@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.urls import reverse
 from django.views import generic
@@ -78,17 +78,31 @@ class PostDelete(UserPassesTestMixin, DeleteView):
         topic_slug = self.object.topic.slug
         return reverse('forum:topic_detail', kwargs={'slug': topic_slug})
 
+def add_comment_to_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.author = request.user
+            comment.save()
+            return redirect('forum:thread', slug=post.slug)
+    else:
+        form = CommentForm()
+    return redirect('forum:thread', slug=post.slug)
+
+class CommentDelete(DeleteView):
+    model = Comment
+    template_name = 'forum/confirm_delete_comment.html'
+
+    def get_success_url(self):
+        return reverse('forum:thread', kwargs={'slug': self.object.post.slug})
 
 class CommentUpdate(UpdateView):
     model = Comment
     fields = ['content']
-
-    def get_success_url(self):
-        return reverse('forum:thread', kwargs={'slug': self.object.post.slug})
-    
-
-class CommentDelete(DeleteView):
-    model = Comment
+    template_name = 'forum/edit_comment.html'
 
     def get_success_url(self):
         return reverse('forum:thread', kwargs={'slug': self.object.post.slug})
