@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Topics</h1>
-<ul>
+{% if topics %}
+  <ul>
     {% for topic in topics %}
-    <li><a href="{{ topic.get_absolute_url }}">{{ topic.title }}</a></li>
+      <li><a href="{{ topic.get_absolute_url }}">{{ topic.title }}</a></li>
+      {{ topic.description }}
+    </ul>
     {% endfor %}
-</ul>
+    {% else %}
+    {% if user.is_staff %}
+      <a href="{% url 'forum:create_topic' %}">No topics please add one</a>
+      {% else %}
+      <a href="{% url 'account_login' %}">Please login</a>
+    {% endif %}
+  {% endif %}
 {% endblock %}
