@@ -113,6 +113,21 @@
     <!-- Font Awesome JS -->
     <script src="https://kit.fontawesome.com/0199d382d0.js" crossorigin="anonymous"></script>
 
+
+    <!-- Button JS Script-->
+   <script>
+    document.getElementById("btn-post").addEventListener("click", function () {
+    
+    const newComment = document.getElementById("new-comment").value;
+    const commentContainer = document.getElementById("comment-container");
+    const commentElement = document.createElement("p");
+    
+    commentElement.innerText = newComment;
+    commentContainer.appendChild(commentElement);
+    document.getElementById("new-comment").value = "";
+    });
+    </script>
+
 </body>
 
 </html>
