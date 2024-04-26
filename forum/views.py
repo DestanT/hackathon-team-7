@@ -92,16 +92,17 @@ def add_comment_to_post(request, post_id):
         form = CommentForm()
     return redirect('forum:thread', slug=post.slug)
 
-class CommentUpdate(UpdateView):
+class CommentDelete(DeleteView):
     model = Comment
-    fields = ['content']
+    template_name = 'forum/confirm_delete_comment.html'
 
     def get_success_url(self):
         return reverse('forum:thread', kwargs={'slug': self.object.post.slug})
-    
 
-class CommentDelete(DeleteView):
+class CommentUpdate(UpdateView):
     model = Comment
+    fields = ['content']
+    template_name = 'forum/edit_comment.html'
 
     def get_success_url(self):
         return reverse('forum:thread', kwargs={'slug': self.object.post.slug})
