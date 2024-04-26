@@ -231,7 +231,12 @@ body {
   background-color: var(--fourth-color);
   border-radius: 15px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap
+}
+
+.forum-comments {
+  background-color: var(--fourth-color);
+  border-radius: 15px;
 }
 
 .post-titles {
