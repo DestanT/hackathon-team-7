@@ -1,9 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Topics</h1>
-<ul>
-    {% for topic in topics %}
-    <li><a href="{{ topic.get_absolute_url }}">{{ topic.title }}</a></li>
-    {% endfor %}
-</ul>
+<div class="container row py-5 topic-container">
+    <div class="col-12">
+      <h1 class="topics-main-title">Topics</h1>
+    </div>
+    <div class = "col-12">
+        <ul class="topic-ul" >
+        {% for topic in topics %}
+            <li><a href="{{ topic.get_absolute_url }}">{{ topic.title }}</a>
+                <div class="topic-description">
+                <p>{{ topic.description }}</p>
+            </div>
+            </li>
+                  
+
+        {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
