@@ -19,6 +19,8 @@
                 {% if comments %}
                 {% for comment in comments %}
                         <p><i class="fa-solid fa-comment-dots"></i> <strong>{{ comment.user.username }}:</strong> {{ comment.content }}</p>
+                        <a href="{% url 'forum:comment_update' pk=comment.pk %}">Edit</a>
+                        <a href="{% url 'forum:comment_delete' pk=comment.pk %}">Delete</a>
                     {% endfor %}
                     {% else %}
                 <p>No comments to show</p>
