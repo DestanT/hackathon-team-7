@@ -25,5 +25,5 @@ urlpatterns = [
     path('contact/', ContactView.as_view(), name='contact'),
     path('threads/', include(('forum.urls', 'forum'), namespace='forum')),
     path('accounts/', include('allauth.urls')),
-    path('profiles/', include('profiles.urls')),
+    path('profiles/', include(('profiles.urls', 'profiles'), namespace='profiles')),
 ]
