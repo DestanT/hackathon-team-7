@@ -1,47 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
-
 <section class="tag-container-fluid information-hub mx-auto mb-2">
     <div class="row">
         <div class="col">
-            <p><i class="fa-solid fa-hashtag"></i><h1> Find Out More Information</h1>
+            <i class="fa-solid fa-hashtag"></i>
+            <h1>Find Out More Information</h1>
         </div>
     </div>
 </section>
 <section class="tag-container mb-5 mx-auto">
-    <div class="rowmb-2">
+    <div class="row mb-2">
         <div class="col">
-            <div class="row forum-post p-3">
+            <div class="forum-post p-3">
                 <div class="row">
                     <div class="col">
-                        <h2 class="post-titles">{{post.title}} </h2>
-                    </div><br>
-               
-                    <div class="row">
-                        <div class="col">
-                            <p>{{ post.content }} </p><br>
+                        <h2 class="post-titles">{{ post.title }}</h2>
+                    </div>               
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>{{ post.content }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div> 
 
-    <div class ="tags">
-        <h3>Tags</h3><ul>{% for tag in tags %}
-            <li>{{ tag.name }}</li>
-        {% endfor %}</ul>
+    <div class="tags">
+        <h3>Tags</h3>
+        <ul>
+            {% for tag in tags %}
+                <li>{{ tag.name }}</li>
+            {% endfor %}
+        </ul>
     </div>
     <div class="row comment-reply p-2">
         <div class="col">
-            <div class="row">
-                <div id="comment-container">
-                    <div class="forum-post">
-                        {% for comment in comments %}
-                        <p><i class="fa-solid fa-comment-dots"></i><strong>{{ comment.user.username }}:</strong> {{ comment.text }}</p>
-                    </div>
+            <div id="comment-container">
+                <div class="forum-post">
+                    {% for comment in comments %}
+                        <p><i class="fa-solid fa-comment-dots"></i> <strong>{{ comment.user.username }}:</strong> {{ comment.text }}</p>
+                    {% endfor %}
                 </div>
-            <div><textarea name="" id="new-comment" cols="60" rows="5"></textarea></div>
-                <button id="btn-post"> Reply </button>
+                <div>
+                    <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+                </div>
+                <button id="btn-post">Reply</button>
             </div>
         </div>
     </div>
