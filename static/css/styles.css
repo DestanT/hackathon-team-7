@@ -41,14 +41,13 @@ body {
   margin-right: 10px;
 }
 
-footer {
+.footer {
   background-color: var(--primary-color);
   color: var(--text-color-dark);
   font-size: 1rem;
   text-align: center;
   align-items: center;
-  position: fixed;
-  bottom: 0;
+  position: relative;  
   width: 100%;
 }
 
@@ -59,6 +58,7 @@ footer {
   border-radius: 10px;
   margin-top: 50px;
   margin-bottom: 30px;
+  box-shadow: var(--text-color-dark) 0px 0px 10px;
 }
 
 .hero-section h1 {
@@ -87,6 +87,7 @@ footer {
   padding: 40px 20px;
   border-radius: 10px;
   margin-bottom: 30px;
+  box-shadow: var(--text-color-dark) 0px 0px 10px;
 }
 .feature-box h3 {
   font-size: 2.5rem;
@@ -328,6 +329,7 @@ button {
   border-radius: 50%;
   margin: 20px;
   border: var(--fourth-color) 10px solid;
+  box-shadow: var(--text-color-dark) 0px 0px 10px;
   transition: border 0.5s;
 }
 
@@ -345,6 +347,7 @@ button {
 .contact-container {
   background-color: var(--primary-color);
   border-radius: 15px;
+  margin-bottom: 50px;
 }
 
 form {
@@ -485,6 +488,53 @@ button {
   font-size: 20px;
 }
 
+
+/* Topics Page */
+.topic-container {
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: var(--text-color-dark) 0px 0px 10px;
+}
+
+.topics-main-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.topic-ul li {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0;
+
+}
+.topic-ul li a {
+  text-decoration: none;
+  color: var(--text-color-dark);
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--fourth-color);
+  width: 400px;
+  margin-bottom: 5px;
+}
+
+.topic-ul li a:hover {
+  border:var(--secondary-color) 2px solid;
+}
+.topic-description {
+  font-size: 1.2rem;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
 @media screen and (max-width: 460px) {
   #threadtitle {
     font-size: 20px;
@@ -594,163 +644,152 @@ button {
 
 /* profile page */
 /* Asterisk wilcard selector to override default styles added by the browser */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
-  
-  
-  /*General styles*/
-  body {
-    font-family: 'Ubuntu', sans-serif;
-    background-color: var(--background-color);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .card {
-    width: 25rem;
-    background-color: rgb(173, 173, 239);
-    border-radius: 24px;
-  }
-  .card .container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .container img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    border: 10px solid #ecf0fc;
-  }
-  
-  .container h2 {
-    font-size: 32px;
-    font-weight: 700;
-    margin: 1rem 0 0.5rem 0;
-  }
-  
-  .container small {
-    color: purple;
-    font-size: 18px;
-    font-weight: 300;
-    margin-bottom: 2rem;
-  }
-  
-  .container .bar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .bar .button {
-    width: 6rem;
-    cursor: pointer;
-    background-color: pink;
-    padding: 10px 0;
-    border-radius: 16px;
-    border-end-end-radius: 1px solid pink;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    outline: none;
-  }
-  
-  .button i {
-    font-size: 20px;
-    margin-bottom: 0.5rem;
-  }
-  
-  .more {
-    display: none;
-    background-color: #120c35;
+
+/*General styles*/
+.profile-main-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-main-card {
+  width: 25rem;
+  background-color: rgb(173, 173, 239);
+  border-radius: 24px;
+}
+.profile-main-card .profile-main-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-main-container img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 10px solid #ecf0fc;
+}
+
+.profile-main-container h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.profile-main-container small {
+  color: purple;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.profile-main-container .bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bar .profile-button {
+  width: 6rem;
+  cursor: pointer;
+  background-color: pink;
+  padding: 10px 0;
+  border-radius: 16px;
+  border-end-end-radius: 1px solid pink;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.profile-button i {
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.more {
+  display: none;
+  background-color: #120c35;
+  width: 15rem;
+  border-radius: 24px;
+  padding: 2rem 1rem;
+  position: absolute;
+  bottom: 0;
+  right: -270%;
+}
+
+.more li {
+  width: 90%;
+  height: 2rem;
+  background-color: transparent;
+  list-style-type: none;
+}
+
+.more.active {
+  display: block;
+}
+
+.more li a {
+  display: block;
+  height: 100%;
+  color: white;
+  font-size: 18px;
+  line-height: 2rem;
+  padding-left: 0.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.4s ease;
+}
+
+.more li a:hover {
+  background-color: #2d2559;
+}
+
+.btn-more {
+  position: relative;
+}
+
+@media screen and (max-width: 425px) {
+  .profile-main-card {
     width: 15rem;
-    border-radius: 24px;
-    padding: 2rem 1rem;
-    position: absolute;
-    bottom: 0;
-    right: -270%;
   }
-  
+
+  .profile-main-container img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-main-container h2 {
+    font-size: 20px;
+  }
+
+  .profile-main-container small {
+    font-size: 14px;
+  }
+
+  .bar .profile-button {
+    width: 3.6rem;
+    font-size: 10pprofile-x;
+  }
+
+  .more {
+    width: 10rem;
+    padding: 1rem 0.5;
+  }
+
   .more li {
-    width: 90%;
-    height: 2rem;
-    background-color: transparent;
-    list-style-type: none;
+    height: 1.5rem;
   }
-  
-  .more.active {
-    display: block;
-  }
-  
+
   .more li a {
-    display: block;
-    height: 100%;
-    color: white;
-    font-size: 18px;
-    line-height: 2rem;
-    padding-left: 0.5rem;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: 0.4s ease;
+    line-height: 1.5rem;
+    font-size: 20px;
   }
-  
-  .more li a:hover {
-    background-color: #2d2559;
-  }
-  
-  .btn-more {
-    position: relative;
-  }
-  
-  @media screen and (max-width: 425px) {
-    .card {
-      width: 15rem;
-    }
-  
-    .container img {
-      width: 100px;
-      height: 100px;
-    }
-  
-    .container h2 {
-      font-size: 20px;
-    }
-  
-    .container small {
-      font-size: 14px;
-    }
-  
-    .bar .button {
-      width: 3.6rem;
-      font-size: 10px;
-    }
-  
-    .more {
-      width: 10rem;
-      padding: 1rem 0.5;
-      
-    }
-  
-    .more li {
-      height: 1.5rem;
-    }
-  
-    .more li a {
-      line-height: 1.5rem;
-      font-size: 20px;
-    }
-  
-  
-  }
+}

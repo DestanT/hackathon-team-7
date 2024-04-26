@@ -1,6 +1,6 @@
 # MIND SISTER
 
-[Link to the deployed site]()
+[Link to the deployed site](https://april-2024-hackathon-a4e92040a028.herokuapp.com/)
 
 # Project Overview
 
@@ -23,7 +23,7 @@ Mind Sister is Team 7 Mindful Coders' project submission for Code Institute's "W
 
 - [Taher](https://github.com/TaherCCG) - Frontend | Wireframes | Imagery
 
-- [Lydia](https://github.com/Lydiajoy97) - Backend
+- [Lydia](https://github.com/Lydiajoy97) - Frontend | Backend
 
 - [Ren](https://github.com/Discoveren) - Frontend | Wireframes 
 
@@ -44,6 +44,7 @@ Mind Sister is Team 7 Mindful Coders' project submission for Code Institute's "W
         - [Colour Palette](#colour-palette)
         - [Imagery](#imagery)
 - [Agile Methodology](#agile-methodology)
+- [Features](#features)
 - [Technologies Used](#technologies-used)
   - [Languages Used](#languages-used)
   - [Frameworks Used](#frameworks-used)
@@ -52,7 +53,8 @@ Mind Sister is Team 7 Mindful Coders' project submission for Code Institute's "W
   - [Programmes and Applications](#programmes-and-applications)
   - [Cloud Application Platforms Used](#cloud-application-platforms-used)
   - [Cloud Storage Services Used](#cloud-storage-services-used)
-<!-- - [Future Development](#future-development) -->
+- [Development](#deployment)
+- [Testing](#testing)
 - [Credits](#credits)
 - [Internal Docs](#internal-docs)
 
@@ -160,9 +162,17 @@ When planning the Mind Sister's features and scope, we drew up a Desirability, I
 <td>5</td>
 <td>5</td>
 <td>5</td>
-<td>✅</td>
+<td>&#x2612;</td>
 </tr>
 <td>Forum</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<td>6</td>
 <td>Topic page</td>
 <td>Registered Users</td>
 <td>5</td>
@@ -170,6 +180,23 @@ When planning the Mind Sister's features and scope, we drew up a Desirability, I
 <td>5</td>
 <td>✅</td>
 </tr>
+<td>Contact</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<td>7</td>
+<td>Contact page</td>
+<td>All Users <sup>1</sup></td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>✅</td>
+</tr>
+
 
 </tbody>
 </table>
@@ -312,6 +339,27 @@ GitHub Projects was used to manage the development of the site:
 
 <img src="documentation/kanban.png" style="width: 998px;">
 
+# Features
+
+- Log in 
+- Log out 
+- Navigation of website
+- Create and delete posts 
+- Add comments to posts 
+- Read other posts 
+
+## Log In Page
+<img src="documentation/login.png" style="width: 300px;">
+
+## Sign In Page
+<img src="documentation/signin.png" style="width: 300px;">
+
+## Contact Page
+<img src="documentation/contact.png" style="width: 300px;">
+
+## Auto Reply
+<img src="documentation/auto-reply.png" style="width: 300px;">
+
 <hr>
 
 # Technologies Used
@@ -364,11 +412,60 @@ GitHub Projects was used to manage the development of the site:
 ## Cloud Storage Services Used
 [Cloudinary](https://cloudinary.com/) was used to store user profile images.
 
-# Deployment and Local Deployment
+# Deployment
 
-## Local Deployment
+## Cloudinary
+1. Create a free account on [Cloudinary](https://cloudinary.com/).
+2. Find the "Settings" tab.
+3. From here, click "Access Keys".
+4. Take note of your API Key and API Secret (again, do not share!).
 
-### Obtaining EmailJS API
+## ElephantSQL
+As Django's internal database system would reset every time [Heroku](https://www.heroku.com/) refreshes your app while idle, it is best to use a service like [ElephantSQL](https://www.elephantsql.com/).
+1. Create a free account.
+2. From the "Instances" dashboard - Create a New Instance.
+3. Name your app, and choose your tier (free is okay for now).
+4. Select the closest server to your region.
+5. Click "Create instance".
+6. Back on your Dashboard - select the newly created instance
+7. Under "Details" copy the URL field (not to be shared!)
+
+
+Before creating the Heroku app, and within your project:
+
+1. Make sure you have a file named “requirements.txt” in your main project folder.
+2. Open the command line and navigate to your project folder.
+3. Run the command “pip3 freeze > requirements.txt”.
+ - This will create a list of dependencies used in the project for Heroku to set up the environment later.
+4. Create a "Procfile" in the project's main directory with "web: gunicorn we_rate_music.wsgi" in it - this allows Heroku to properly configure to a gunicorn web app.
+5. In the project's settings.py file configure the ALLOWED_HOSTS list to include 'your_app_name123.herokuapp.com'.
+6. Push these latest changes, including the requirements.txt file, to your GitHub repository (or any other preferred Git service).
+
+
+Now, you can proceed with creating the [Heroku](https://www.heroku.com/) app:
+1. Sign in to your Heroku account (if you don’t already have one, create a free account on Heroku first).
+2. Once logged in, click on the “Create new app” button on your Heroku dashboard and follow the subsequent steps.
+3. From within your newly created app, click the “Settings” tab.
+4. Scroll down to the section labeled “Config Vars” and click on “Reveal Config Vars”.
+5. Configure the following key-value pairs:
+```
+CLIENT_ID: This is your Spotify Client ID
+CLIENT_SECRET: This is your Spotify Client Secret
+CLOUDINARY_URL: The format of this URL is as follows - 'cloudinary://{Your API KEY}:{Your API Secret}'
+DATABASE_URL: This is your ElephantSQL URL
+SECRET_KEY: This is your Django project's secret key
+DISABLE_COLLECTSTATIC: 1
+PORT: 8000
+```
+6. Navigate to the “Deploy” tab at the top of the page.
+7. Choose your preferred deployment method (GitHub, for example) and connect it to your app.
+8. Search for the repository name in the dropdown menu and select it.
+9. Click “Connect”.
+10. Then, either select “Enable Automatic Deploys” or “Deploy Branch”; the difference is that one automatically deploys the app every time a change is pushed to GitHub and the other needs to be redeployed manually every time.
+11. You should now have a working Heroku app on your dashboard.
+
+
+## EmailJS API
 
 1. Sign up for a [EmailJS](https://www.emailjs.com/docs/) account in the EmailJS website.
 2. Create an email service in your EmailJS dashboard.
@@ -396,27 +493,14 @@ $ yarn add @emailjs/browser
   })();
 </script>
 ```
+## Testing 
 
-<!-- # Future Development -->
-
-<!-- ### Features
-
-### Accessibility
-
-## Deployment and Local Deployment
-
-## Testing
-
-## Bugs
-
-### Known Bugs
-
-### Solved Bugs -->
+[Mind Sisters Testing page](https://docs.google.com/document/d/1ytObQstdC-A9fjfkY_kjaRNQuOlblhxq4MQoCC0U5dY/edit?usp=sharing)
 
 
-## Credits
+# Credits
 
-#### Online sources used for research:
+## Online sources used for research:
 
 - [Addressing unmet needs in women’s mental health](https://www.bma.org.uk/media/2115/bma-womens-mental-health-report-aug-2018.pdf)
 
@@ -426,13 +510,16 @@ $ yarn add @emailjs/browser
 
 - [Premenstrual dysphoric disorder (PMDD)](https://www.mind.org.uk/information-support/types-of-mental-health-problems/premenstrual-dysphoric-disorder-pmdd/about-pmdd/)
 
-#### Documentation:
+## Code:
+[Creating a Simple Comment Box with JavaScript for Beginners](https://medium.com/@ayshaismail021/creating-a-simple-comment-box-with-javascript-for-beginners-e865c2dda97e)
+
+## Documentation:
 The README files from the projects below were used to structure the documentation of this project: 
 - https://github.com/rachel-o-donnell/rising-women
 - https://github.com/JoyZadan/shop-kbeauty
 
     
-## Internal Docs
+# Internal Docs
 <details>
   <summary>Getting Started</summary>
 
