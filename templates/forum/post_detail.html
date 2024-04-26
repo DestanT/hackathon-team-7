@@ -1,25 +1,49 @@
 {% extends "base.html" %}
-
 {% block content %}
-<div class="post-detail">
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
 
-    <h3>Tags</h3>
-    <ul>
-        {% for tag in tags %}
-        <li>{{ tag.name }}</li>
-        {% endfor %}
-    </ul>
+<section class="tag-container-fluid information-hub mx-auto mb-2">
+    <div class="row">
+        <div class="col">
+            <p><i class="fa-solid fa-hashtag"></i><h1> Find Out More Information</h1>
+        </div>
+    </div>
+</section>
+<section class="tag-container mb-5 mx-auto">
+    <div class="rowmb-2">
+        <div class="col">
+            <div class="row forum-post p-3">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="post-titles">{{post.title}} </h2>
+                    </div><br>
+               
+                    <div class="row">
+                        <div class="col">
+                            <p>{{ post.content }} </p><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
 
-    <h3>Comments</h3>
-    <ul>
-        {% for comment in comments %}
-        <li>
-            <strong>{{ comment.user.username }}:</strong>
-            {{ comment.text }}
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+    <div class ="tags">
+        <h3>Tags</h3><ul>{% for tag in tags %}
+            <li>{{ tag.name }}</li>
+        {% endfor %}</ul>
+    </div>
+    <div class="row comment-reply p-2">
+        <div class="col">
+            <div class="row">
+                <div id="comment-container">
+                    <div class="forum-post">
+                        {% for comment in comments %}
+                        <p><i class="fa-solid fa-comment-dots"></i><strong>{{ comment.user.username }}:</strong> {{ comment.text }}</p>
+                    </div>
+                </div>
+            <div><textarea name="" id="new-comment" cols="60" rows="5"></textarea></div>
+                <button id="btn-post"> Reply </button>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
