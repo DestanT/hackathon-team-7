@@ -54,6 +54,7 @@ Mind Sister is Team 7 Mindful Coders' project submission for Code Institute's "W
   - [Cloud Application Platforms Used](#cloud-application-platforms-used)
   - [Cloud Storage Services Used](#cloud-storage-services-used)
 - [Development](#deployment)
+- [Testing](#testing)
 - [Credits](#credits)
 - [Internal Docs](#internal-docs)
 
@@ -340,17 +341,24 @@ GitHub Projects was used to manage the development of the site:
 
 # Features
 
+- Log in 
+- Log out 
+- Navigation of website
+- Create and delete posts 
+- Add comments to posts 
+- Read other posts 
+
 ## Log In Page
-<img src="documentation/login.png" style="width: 598px;">
+<img src="documentation/login.png" style="width: 300px;">
 
 ## Sign In Page
-<img src="documentation/signin.png" style="width: 598px;">
+<img src="documentation/signin.png" style="width: 300px;">
 
 ## Contact Page
-<img src="documentation/contact.png" style="width: 598px;">
+<img src="documentation/contact.png" style="width: 300px;">
 
 ## Auto Reply
-<img src="documentation/auto-reply.png" style="width: 598px;">
+<img src="documentation/auto-reply.png" style="width: 300px;">
 
 <hr>
 
@@ -485,22 +493,9 @@ $ yarn add @emailjs/browser
   })();
 </script>
 ```
+## Testing 
 
-<!-- # Future Development -->
-
-<!-- ### Features
-
-### Accessibility
-
-## Deployment and Local Deployment
-
-## Testing
-
-## Bugs
-
-### Known Bugs
-
-### Solved Bugs -->
+[Mind Sisters Testing page](https://docs.google.com/document/d/1ytObQstdC-A9fjfkY_kjaRNQuOlblhxq4MQoCC0U5dY/edit?usp=sharing)
 
 
 # Credits
