@@ -47,7 +47,7 @@ body {
   font-size: 1rem;
   text-align: center;
   align-items: center;
-  position: relative;  
+  position: relative;
   width: 100%;
 }
 
@@ -216,7 +216,6 @@ body {
 #reply-submit:hover {
   background-color: var(--secondary-color);
 }
-
 
 /* thread page */
 .information-hub {
@@ -489,7 +488,6 @@ button {
   font-size: 20px;
 }
 
-
 /* Topics Page */
 .topic-container {
   background-color: var(--primary-color);
@@ -511,7 +509,6 @@ button {
   list-style-type: none;
   padding: 0;
   margin: 15px 0;
-
 }
 .topic-ul li a {
   text-decoration: none;
@@ -526,7 +523,7 @@ button {
 }
 
 .topic-ul li a:hover {
-  border:var(--secondary-color) 2px solid;
+  border: var(--secondary-color) 2px solid;
 }
 .topic-description {
   font-size: 1.2rem;
@@ -816,4 +813,77 @@ button {
   .login-signup-container form {
     width: 90%;
   }
+}
+
+#id_title,
+#id_content {
+  font-size: 20px;
+  width: 80%;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 3px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  width: 80%;
+  margin-top: 20px;
+  resize: none;
+}
+
+#id_title:focus {
+  outline: none;
+  border-color: #a2d2ff;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+#id_content:focus {
+  outline: none;
+  border-color: #a2d2ff;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+.create-post-heading {
+  margin-left: 5rem;
+}
+
+label[for="id_title"] {
+  color: #6962d2;
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+label[for="id_content"] {
+  color: #6962d2;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 20px 40px;
+  background-color: #bde0fe;
+  color: #6962d2;
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 50px auto;
+}
+
+button:hover {
+  background-color: #ffafcc;
+  color: #ff084a;
+}
+
+#post-form-container {
+  text-align: center;
+  border: 1px solid #6962d2;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #e8d8f2;
+  margin-top: 20px;
+  border-radius: 8px;
 }

@@ -1,9 +1,7 @@
-{% extends "base.html" %}
-{% block content %}
-<h1>Create a New Post</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
+{% extends "base.html" %} {% block content %}
+<h1 class="create-post-heading">Create a New Post</h1>
+<form id="post-form-container" method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Submit</button>
 </form>
 {% endblock %}
