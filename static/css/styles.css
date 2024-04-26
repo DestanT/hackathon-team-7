@@ -232,7 +232,12 @@ body {
   background-color: var(--fourth-color);
   border-radius: 15px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap
+}
+
+.forum-comments {
+  background-color: var(--fourth-color);
+  border-radius: 15px;
 }
 
 .post-titles {
@@ -813,6 +818,7 @@ button {
     line-height: 1.5rem;
     font-size: 20px;
   }
+}
   .login-signup-container form {
     width: 90%;
   }
