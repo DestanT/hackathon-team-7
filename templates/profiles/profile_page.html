@@ -1,34 +1,47 @@
-{% extends "base.html" %} {% load static %} {% block content %}
-<div class="profile-main-container">
-  <div class="profile-main-card">
-    <div class="profile-main-container">
-      <img
-        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="profil image one women"
-      />
-      <h2>Anna K</h2>
-      <small>mother</small>
 
-      <div class="bar">
-        <button class="profile-button">
-          <i class="fa-solid fa-pencil"></i>
-          <span>Edit profile</span>
-        </button>
-        <button class="profile-button">
-          <i class="fa-regular fa-face-smile"></i>
-          <span>Set a status</span>
-        </button>
-        <button class="profile-button btn-more">
-          <i class="fa-solid fa-ellipsis"></i>
-          <span>More</span>
-          <ul class="more">
-            <li><a href="#">Update your status</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </button>
-      </div>
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<div class="card">
+    <div class="container">
+        <img src="{{ profile.image.url }}" alt="User profile image">
+        <h2>{{ profile.owner.username }}</h2>
+        <small>{{ profile.bio }}</small>
+
+        <div class="bar">
+            <a class="button" href="{% url 'profiles:profile_update' pk=profile.pk %}">
+                <i class="fa-solid fa-pencil"></i>
+                <span>Edit profile</span>
+            </a>
+            <button class="button">
+                <i class="fa-regular fa-face-smile"></i>
+                <span>Set a status</span>
+            </button>
+            <button class="button btn-more">
+                <i class="fa-solid fa-ellipsis"></i>
+                <span>More</span>
+                <ul class="more">
+                    <li><a href="#">Update your status</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </button>
+        </div>
+
+        <form method="post" action="{% url 'profiles:profile_update' pk=profile.pk %}" class="container">
+            {% csrf_token %}
+            <div class="bar">
+                <div>
+                    {{ profile_edit_form | crispy }}
+                </div>
+                <div>
+                    <button type="submit" class="button">Save</button>
+                </div>
+            </div>
+        </form>
+
     </div>
-  </div>
 </div>
 
 {% endblock %}
