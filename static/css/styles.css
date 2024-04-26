@@ -217,6 +217,7 @@ body {
   background-color: var(--secondary-color);
 }
 
+
 /* thread page */
 .information-hub {
   background-color: var(--secondary-color);
@@ -350,7 +351,7 @@ button {
   margin-bottom: 50px;
 }
 
-form {
+.contactForm {
   background-color: var(--secondary-color);
   padding: 20px;
   border-radius: 8px;
@@ -642,6 +643,26 @@ button {
   padding: 10px;
 }
 
+/* Login - Sign UP */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--primary-color);
+  border-radius: 15px;
+}
+.login-signup-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 /* profile page */
 /* Asterisk wilcard selector to override default styles added by the browser */
 
@@ -791,5 +812,8 @@ button {
   .more li a {
     line-height: 1.5rem;
     font-size: 20px;
+  }
+  .login-signup-container form {
+    width: 90%;
   }
 }
