@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="card">
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+             alt="profil image one women">
+            <h2>Anna K</h2>
+            <small>mother</small>
+
+            <div class="bar">
+                <button class="button">
+                   <i class="fa-solid fa-pencil"></i>
+                   <span>Edit profile</span>
+                </button>
+                <button class="button">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <span>Set a status</span>
+                </button>
+                <button class="button btn-more">
+                    <i class="fa-solid fa-ellipsis"></i>
+                    <span>More</span>
+                    <ul class="more">
+                        <li><a href="#">Update your status</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+
+
+{% endblock %}
