@@ -16,6 +16,7 @@
 <p>{% blocktrans %}If you have not created an account yet, then please
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 
+<div class="login-signup-container col-sm-6">
 <form id="auth_form" class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   {{ form|crispy}}
@@ -29,5 +30,6 @@
   <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </p>
 </form>
+</div
 
 {% endblock %}
