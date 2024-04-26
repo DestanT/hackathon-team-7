@@ -18,7 +18,7 @@ class Topic(models.Model):
         return reverse('forum:topic_detail', kwargs={'slug': self.slug})
 
 class Post(models.Model):
-    topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name='posts')
+    topic = models.ForeignKey(Topic, on_delete=models.CASCADE, related_name='posts', null=True)
     title = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
     content = models.TextField()
